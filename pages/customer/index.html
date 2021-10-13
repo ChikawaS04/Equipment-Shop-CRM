@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>Create Customer</title>
+        <title>List of Customers</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,9 +17,8 @@
     </head>
 
   <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <nav class="navbar navbar-dark sticky-top bg-green flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">MindTech Force</a>
-      <!--<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">-->
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#">Sign out</a>
@@ -51,7 +50,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/pages/customer/index.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                   Customers
                 </a>
@@ -71,7 +70,7 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Customers</li>
               </ol>
             </nav>
@@ -82,7 +81,7 @@
             <div class="form-row">
               <div class="form-group col-md-8">
                 <label for="searchtext">Search For</label>
-                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Name" required>
+                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Name/Email Address/Phone Number" required>
               </div>
               <div class="form-group col-md-4">
                 <a href="create.html"><button type="button" class="btn btn-primary right">
@@ -104,43 +103,43 @@
                 <tbody>
                   <tr>
                     <td>0000001</td>
-                    <td ahref="#">John White</td>
+                    <td><a href="edit.html">John White</a></td>
                     <td>jwhite@gmail.com</td>
                     <td>905-555-5551</td>
                   </tr>
                   <tr>
                     <td>0000002</td>
-                    <td ahref="#">Lesley Brown</td>
+                    <td><a href="edit.html">Lesley Brown</a></td>
                     <td>lbrown@gmail.com</td>
                     <td>905-555-5552</td>
                   </tr>
                   <tr>
                     <td>0000003</td>
-                    <td ahref="#">Dwayne Johnson</td>
+                    <td><a href="edit.html">Dwayne Johnson</a></td>
                     <td>djohnson@gmail.com</td>
                     <td>905-555-5553</td>
                   </tr>
                   <tr>
                     <td>0000004</td>
-                    <td ahref="#">Hilary George</td>
+                    <td><a href="edit.html">Hilary George</a></td>
                     <td>hgeorge@gmail.com</td>
                     <td>905-555-5554</td>
                   </tr>
                   <tr>
                     <td>0000005</td>
-                    <td ahref="#">James Lee</td>
+                    <td><a href="edit.html">James Lee</a></td>
                     <td>jlee@gmail.com</td>
                     <td>905-555-5555</td>
                   </tr>
                   <tr>
                     <td>0000006</td>
-                    <td ahref="#">Delores Co</td>
+                    <td><a href="edit.html">Delores Co</a></td>
                     <td>dco@gmail.com</td>
                     <td>905-555-5556</td>
                   </tr>
                   <tr>
                     <td>0000007</td>
-                    <td ahref="#">Steve Jones</td>
+                    <td><a href="edit.html">Steve Jones</a></td>
                     <td>sjones@gmail.com</td>
                     <td>905-555-5558</td>
                   </tr>
@@ -164,5 +163,13 @@
       feather.replace()
     </script>
 
-   </body>
+  </body>
+  <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">&copy;2021 Copyrights by
+      <a href="#"> MindTech Force</a>. All Rights Reserved.
+    </div>
+    <!-- Copyright -->
+  </footer>
 </html>
