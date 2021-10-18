@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>List of Customers</title>
+        <title>Customer Details</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/product/index.html">
+                <a class="nav-link" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                   Products
                 </a>
@@ -71,81 +71,105 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Customers</li>
+                <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View Customer</li>
               </ol>
             </nav>
-            <h1 class="h2">List of Customers</h1>
+            <h1 class="h2">View Customer</h1>
           </div>
 
           <form action="https://webdevbasics.net/scripts/demo.php" method="post">
-            <div class="form-row">
-              <div class="form-group col-md-8">
-                <label for="searchtext">Search For</label>
-                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Name/Email Address/Phone Number" required>
+              <h2>Customer Information</h2>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="firstname">First Name</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="John" required disabled>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Middle Name" disabled>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="White" required disabled>
+                </div>
               </div>
-              <div class="form-group col-md-4">
-                <a href="create.html"><button type="button" class="btn btn-primary right">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                  New Customer</a>
-                </button>
-              </div> 
-            </div>
-            <div class="table-responsive">
-              <table class="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th>Customer Number</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>0000001</td>
-                    <td><a href="edit.html">John White</a></td>
-                    <td>jwhite@gmail.com</td>
-                    <td>905-555-5551</td>
-                  </tr>
-                  <tr>
-                    <td>0000002</td>
-                    <td><a href="edit.html">Lesley Brown</a></td>
-                    <td>lbrown@gmail.com</td>
-                    <td>905-555-5552</td>
-                  </tr>
-                  <tr>
-                    <td>0000003</td>
-                    <td><a href="edit.html">Dwayne Johnson</a></td>
-                    <td>djohnson@gmail.com</td>
-                    <td>905-555-5553</td>
-                  </tr>
-                  <tr>
-                    <td>0000004</td>
-                    <td><a href="edit.html">Hilary George</a></td>
-                    <td>hgeorge@gmail.com</td>
-                    <td>905-555-5554</td>
-                  </tr>
-                  <tr>
-                    <td>0000005</td>
-                    <td><a href="edit.html">James Lee</a></td>
-                    <td>jlee@gmail.com</td>
-                    <td>905-555-5555</td>
-                  </tr>
-                  <tr>
-                    <td>0000006</td>
-                    <td><a href="edit.html">Delores Co</a></td>
-                    <td>dco@gmail.com</td>
-                    <td>905-555-5556</td>
-                  </tr>
-                  <tr>
-                    <td>0000007</td>
-                    <td><a href="edit.html">Steve Jones</a></td>
-                    <td>sjones@gmail.com</td>
-                    <td>905-555-5558</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="jwhite@gmail.com" placeholder="Enter email" disabled>
+                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" aria-describedby="telHelp" value="905-555-5551" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
+                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value="123 Strathmore" disabled>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="City" value="Niagara" disabled>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputProvince">Province</label>
+                  <select id="inputProvince" class="form-control" disabled>
+                    <option disabled>Choose...</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="New Brunswick">New Brunswick</option>
+                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                    <option value="Northwest Territories">Northwest Territories</option>
+                    <option value="Nova Scotia">Nova Scotia</option>
+                    <option value="Nunavut">Nunavut</option>
+                    <option value="Ontario" selected>Ontario</option>
+                    <option value="Prince Edward Island">Prince Edward Island</option>
+                    <option value="Quebec">Quebec</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Yukon">Yukon</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputPostalCode">Postal Code</label>
+                  <input type="text" class="form-control" id="inputPostalCode" value="L3A 3B1" placeholder="Postal Code" disabled>
+                </div>
+              </div>
+
+              <h2>Equipment Purchased</h2>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>Equipment Name</th>
+                      <th>Date Purchased</th>
+                      <th>Warranty Status</th>
+                      <th>Sales Order</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="#">Brake Pads</a></td>
+                      <td>October 20, 2019</td>
+                      <td>Expired</td>
+                      <td><a href="#">0000002</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">Brake Pads</a></td>
+                      <td>October 5, 2021</td>
+                      <td>Warranty</td>
+                      <td><a href="#">0000008</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-primary">Close</button></a>
           </form>
         </main>
       </div>
@@ -162,8 +186,8 @@
     <script>
       feather.replace()
     </script>
-
   </body>
+  
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4">
     <!-- Copyright -->

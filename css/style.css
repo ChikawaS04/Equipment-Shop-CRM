@@ -107,3 +107,30 @@ button.btn.btn-primary.right a { color: white !important; }
 
 .breadcrumb { background-color: white !important;}
 
+/*
+tables
+*/
+
+#btnAddEquipment {
+  margin-bottom: 20px;
+}
+
+button.btn.btn-link {
+ font-size: 1.3rem;
+ color: #000 !important;
+ text-decoration: none;
+ padding-left: 0px;
+}
+
+#customerEquipmentList {
+  color: #000 !important;
+  cursor: none;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* buttons */
+.btn-third {
+  background: #d11a2a;
+  color: #fff;
+}

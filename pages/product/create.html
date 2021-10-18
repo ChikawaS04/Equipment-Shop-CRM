@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>List of Customers</title>
+        <title>Create Customer</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,81 +71,75 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Customers</li>
+                <li class="breadcrumb-item"><a href="/pages/product/index.html">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New Product</li>
               </ol>
             </nav>
-            <h1 class="h2">List of Customers</h1>
+            <h1 class="h2">New Product</h1>
           </div>
 
           <form action="https://webdevbasics.net/scripts/demo.php" method="post">
-            <div class="form-row">
-              <div class="form-group col-md-8">
-                <label for="searchtext">Search For</label>
-                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Name/Email Address/Phone Number" required>
+              <h2>Product Information</h2>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="productName">Name</label>
+                  <input type="text" class="form-control" id="productName" name="productName" placeholder="Product Name" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="productDescription">Description</label>
+                    <input type="text" class="form-control" id="productDescription" name="productDescription" placeholder="Product Description" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Product Quanity" aria-describedby="quantityHelp" min="1" max="30" required disabled>
+                    <small id="quantityHelp" class="form-text text-muted">Quantity should be between 1 - 30</small>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="reorderQuantity">Re-Order Quantity</label>
+                  <input type="number" class="form-control" id="reorderQuantity" name="reorderQuantity" placeholder="Re-Order Quanity" aria-describedby="reorderQuantityHelp" min="1" max="10" required>
+                  <small id="reorderQuantityHelp" class="form-text text-muted">Quantity should be between 1 - 10</small>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="supplierName">Supplier</label>
+                  <select name="supplierName" id="supplierName" class="form-control">
+                      <option disabled selected>
+                          Choose Supplier
+                      </option>
+                      <option value="Supplier 1">Supplier 1</option>
+                      <option value="Supplier 2">Supplier 2</option>
+                      <option value="Supplier 3">Supplier 3</option>
+                      <option value="Supplier 4">Supplier 4</option>
+                      <option value="Supplier 5">Supplier 5</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="category">Category</label>
+                  <select name="category" id="category" class="form-control">
+                      <option disabled selected>
+                          Choose Category
+                      </option>
+                      <option value="Category 1">Category 1</option>
+                      <option value="Category 2">Category 2</option>
+                      <option value="Category 3">Category 3</option>
+                      <option value="Category 4">Category 4</option>
+                      <option value="Category 5">Category 5</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="status">Is Active?</label>
+                  <div class="radio-section">
+                      <div class="col-md-6">
+                        <input type="radio" id="status" name="status" value="Yes">
+                        <label for="status">Yes</label>
+                        <input type="radio" id="status" name="status" value="No">
+                        <label for="status">No</label>
+                      </div>
+                  </div>
+                </div>
               </div>
-              <div class="form-group col-md-4">
-                <a href="create.html"><button type="button" class="btn btn-primary right">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                  New Customer</a>
-                </button>
-              </div> 
-            </div>
-            <div class="table-responsive">
-              <table class="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th>Customer Number</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>0000001</td>
-                    <td><a href="edit.html">John White</a></td>
-                    <td>jwhite@gmail.com</td>
-                    <td>905-555-5551</td>
-                  </tr>
-                  <tr>
-                    <td>0000002</td>
-                    <td><a href="edit.html">Lesley Brown</a></td>
-                    <td>lbrown@gmail.com</td>
-                    <td>905-555-5552</td>
-                  </tr>
-                  <tr>
-                    <td>0000003</td>
-                    <td><a href="edit.html">Dwayne Johnson</a></td>
-                    <td>djohnson@gmail.com</td>
-                    <td>905-555-5553</td>
-                  </tr>
-                  <tr>
-                    <td>0000004</td>
-                    <td><a href="edit.html">Hilary George</a></td>
-                    <td>hgeorge@gmail.com</td>
-                    <td>905-555-5554</td>
-                  </tr>
-                  <tr>
-                    <td>0000005</td>
-                    <td><a href="edit.html">James Lee</a></td>
-                    <td>jlee@gmail.com</td>
-                    <td>905-555-5555</td>
-                  </tr>
-                  <tr>
-                    <td>0000006</td>
-                    <td><a href="edit.html">Delores Co</a></td>
-                    <td>dco@gmail.com</td>
-                    <td>905-555-5556</td>
-                  </tr>
-                  <tr>
-                    <td>0000007</td>
-                    <td><a href="edit.html">Steve Jones</a></td>
-                    <td>sjones@gmail.com</td>
-                    <td>905-555-5558</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="submit" class="btn btn-primary">Clear</button>
           </form>
         </main>
       </div>
@@ -162,8 +156,8 @@
     <script>
       feather.replace()
     </script>
-
   </body>
+
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4">
     <!-- Copyright -->
