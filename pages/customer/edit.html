@@ -109,32 +109,33 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Address" aria-describedby="addressHelp" disabled>
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" disabled>
                 <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputProvince">Province</label>
-                  <select id="inputProvince" name="inputProvince" class="form-control" disabled>
+                  <label for="province">Province</label>
+                  <select id="province" name="province" class="form-control" disabled>
                     <option disabled selected>Choose...</option>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputCity">City</label>
-                  <select id="inputCity" name="inputProvince" class="form-control" disabled>
+                  <label for="city">City</label>
+                  <select id="city" name="city" class="form-control" disabled>
                     <option disabled selected>Choose...</option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputPostalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="inputPostalCode" name="inputPostalCode" placeholder="Postal Code" disabled>
+                  <label for="postalCode">Postal Code</label>
+                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" disabled>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Edit</button>
+              <button type="submit" class="btn btn-primary" id="btnEdit">Edit</button>
+              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-primary" id="btnSave">Save</button></a>
               <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal">Delete</button>
               <a href="/pages/customer/index.html"><button type="submit" class="btn btn-secondary">Close</button></a>
-              
+
               <div class="accordion" id="customerEquipmentList">
                 <div class="card">
                   <div class="card-header" id="equipmentList">
