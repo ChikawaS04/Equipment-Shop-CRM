@@ -7,14 +7,13 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>Create Customer</title>
+        <title>Customer Details</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="/css/style.css" rel="stylesheet">
-
     </head>
 
   <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
@@ -79,62 +78,69 @@
             <h1 class="h2">View Customer</h1>
           </div>
 
-          <!--<form action="/pages/customer/edit.html" method="post">-->
+          <form action="https://webdevbasics.net/scripts/demo.php" method="post">
               <h2>Customer Information</h2>
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required disabled>
+                  <label for="firstname">First Name</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="John" required disabled>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" disabled>
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="" disabled>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required disabled>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="White" required disabled>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" disabled>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="jwhite@gmail.com" placeholder="Enter email" disabled>
                     <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
+                    <input type="tel" class="form-control" id="phone" aria-describedby="telHelp" value="905-555-5551" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
                     <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Address" aria-describedby="addressHelp" disabled>
-                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Address" value="123 Strathmore" disabled>
               </div>
               <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="inputProvince">Province</label>
-                  <select id="inputProvince" name="inputProvince" class="form-control" disabled>
-                    <option disabled selected>Choose...</option>
-                  </select>
-                </div>
                 <div class="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <select id="inputCity" name="inputProvince" class="form-control" disabled>
-                    <option disabled selected>Choose...</option>
+                  <input type="text" class="form-control" id="inputCity" placeholder="City" value="Niagara" disabled>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputProvince">Province</label>
+                  <select id="inputProvince" class="form-control" disabled>
+                    <option disabled>Choose...</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="New Brunswick">New Brunswick</option>
+                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                    <option value="Northwest Territories">Northwest Territories</option>
+                    <option value="Nova Scotia">Nova Scotia</option>
+                    <option value="Nunavut">Nunavut</option>
+                    <option value="Ontario" selected>Ontario</option>
+                    <option value="Prince Edward Island">Prince Edward Island</option>
+                    <option value="Quebec">Quebec</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Yukon">Yukon</option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputPostalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="inputPostalCode" name="inputPostalCode" placeholder="Postal Code" disabled>
+                  <input type="text" class="form-control" id="inputPostalCode" value="L3A 3B1" placeholder="Postal Code" disabled>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Edit</button>
-              <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal">Delete</button>
-              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-secondary">Close</button></a>
-              
+
               <div class="accordion" id="customerEquipmentList">
                 <div class="card">
                   <div class="card-header" id="equipmentList">
@@ -258,31 +264,11 @@
                 </div>
               </div>
             </div>
-          <!--</form>-->
 
-          <!-- modal-->
-          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    Are you sure you want to DELETE the record?
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-third" data-dismiss="modal" id="btnCustomerDeleteRecord">Delete</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end modal-->
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-third">Delete</button></a>
+              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-secondary">Close</button></a>
+          </form>
         </main>
       </div>
     </div>
@@ -292,17 +278,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script src="/js/app.js"></script>
     <script>
       feather.replace()
     </script>
   </body>
-
+  
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4">
     <!-- Copyright -->

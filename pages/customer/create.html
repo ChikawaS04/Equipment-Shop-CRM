@@ -14,6 +14,7 @@
 
         <!-- Custom styles for this template -->
         <link href="/css/style.css" rel="stylesheet">
+
     </head>
 
   <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
@@ -78,72 +79,85 @@
             <h1 class="h2">New Customer</h1>
           </div>
 
-          <form action="https://webdevbasics.net/scripts/demo.php" method="post">
+          <!--<form action="/pages/customer/edit.html" method="post">-->
               <h2>Customer Information</h2>
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="firstname">First Name</label>
-                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="middlename">Middle Name</label>
-                    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Middle Name">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name">
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
                     <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                     <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Address" aria-describedby="addressHelp">
+                <input type="text" class="form-control" id="inputAddress" name="inputAddress" dressplaceholder="Address" aria-describedby="addressHelp">
                 <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
               </div>
               <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="inputCity" placeholder="City">
-                </div>
                 <div class="form-group col-md-4">
                   <label for="inputProvince">Province</label>
-                  <select id="inputProvince" class="form-control">
+                  <select id="inputProvince" name="inputProvince" class="form-control">
                     <option disabled selected>Choose...</option>
-                    <option value="Alberta">Alberta</option>
-                    <option value="British Columbia">British Columbia</option>
-                    <option value="Manitoba">Manitoba</option>
-                    <option value="New Brunswick">New Brunswick</option>
-                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                    <option value="Northwest Territories">Northwest Territories</option>
-                    <option value="Nova Scotia">Nova Scotia</option>
-                    <option value="Nunavut">Nunavut</option>
-                    <option value="Ontario">Ontario</option>
-                    <option value="Prince Edward Island">Prince Edward Island</option>
-                    <option value="Quebec">Quebec</option>
-                    <option value="Saskatchewan">Saskatchewan</option>
-                    <option value="Yukon">Yukon</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <select id="inputCity" name="inputProvince" class="form-control">
+                    <option disabled selected>Choose...</option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputPostalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="inputPostalCode" placeholder="Postal Code">
+                  <input type="text" class="form-control" id="inputPostalCode" name="inputPostalCode" placeholder="Postal Code">
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Save</button>
-              <button type="submit" class="btn btn-primary">Clear</button>
-          </form>
+              <a href="/pages/customer/edit.html"><button type="submit" class="btn btn-primary">Save</button></a>
+              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal">Clear</button>
+          <!--</form>-->
+
+          <!-- modal-->
+          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="confirmationModalLabel"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Do you wish to proceed on clearing all the values?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClearAll">Clear All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal-->
         </main>
       </div>
     </div>
@@ -153,9 +167,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script src="/js/app.js"></script>
     <script>
       feather.replace()
     </script>
