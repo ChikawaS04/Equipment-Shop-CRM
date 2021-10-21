@@ -15,6 +15,9 @@
         <!-- Custom styles for this template -->
         <link href="/css/style.css" rel="stylesheet">
 
+        <!-- Need to load jquery firsrt for the modal to use the script-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
 
   <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
@@ -79,7 +82,7 @@
             <h1 class="h2">View Customer</h1>
           </div>
 
-          <!--<form action="/pages/customer/edit.html" method="post">-->
+          <form action="/pages/customer/index.html" method="" id="customerEditForm">
               <h2>Customer Information</h2>
               <div class="form-row">
                 <div class="form-group col-md-4">
@@ -117,13 +120,13 @@
                 <div class="form-group col-md-4">
                   <label for="province">Province</label>
                   <select id="province" name="province" class="form-control" disabled>
-                    <option disabled selected>Choose...</option>
+                    <option disabled selected></option>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="city">City</label>
                   <select id="city" name="city" class="form-control" disabled>
-                    <option disabled selected>Choose...</option>
+                    <option disabled selected></option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
@@ -132,9 +135,9 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-primary" id="btnEdit">Edit</button>
-              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-primary" id="btnSave">Save</button></a>
-              <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal">Delete</button>
-              <a href="/pages/customer/index.html"><button type="submit" class="btn btn-secondary">Close</button></a>
+              <button type="submit" class="btn btn-primary" id="btnSave" style="display:none;">Save</button>
+              <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal" id="btnDelete" style="display:none;">Delete</button>
+              <button type="submit" class="btn btn-secondary" id="btnClose">Close</button>
 
               <div class="accordion" id="customerEquipmentList">
                 <div class="card">
@@ -148,7 +151,7 @@
               
                   <div id="collapseOne" class="collapse show" aria-labelledby="equipmentList" data-parent="#customerEquipmentList">
                     <div class="card-body">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipmentModal" id="btnAddEquipment">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipmentModal" id="btnAddEquipment" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action">
                         Add Equipment
                       </button>
                       <div class="table-responsive">
@@ -162,21 +165,7 @@
                               <th>Date Checked-out</th>
                             </tr>
                           </thead>
-                          <tbody>
-                            <tr>
-                              <td><a href="#">Podoy 532187292, 187292, 192872 Lawn Mower Deck Spindle Assembly</a></td>
-                              <td>Podoy</td>
-                              <td>Spindle</td>
-                              <td>9 September 2021</td>
-                              <td>10 September 2021</td>
-                            </tr>
-                            <tr>
-                              <td><a href="#">THE LAWN MOWER™ 4.0</a></td>
-                              <td>Manscaped</td>
-                              <td>Lawn Mower</td>
-                              <td>11 October 2021</td>
-                              <td>15 October 2021</td>
-                            </tr>
+                          <tbody id="equipmentDetails">
                           </tbody>
                         </table>
                       </div>
@@ -184,82 +173,7 @@
                   </div>
                 </div>
               </div>
-
-              <!-- Equipment Overlay -->
-            <div class="modal fade" id="equipmentModal" tabindex="-1" role="dialog" aria-labelledby="overlayModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="overlayModalLabel">Add Equipment</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-row">
-                        <label for="equipmentDescription" class="col-form-label">Description</label>
-                        <textarea class="form-control" id="equipmentDescription" rows="2"></textarea>
-                      </div>
-                      <div class="form-row">
-                        <label for="inputColour" class="col-form-label">Colour</label>
-                        <select id="inputColour" class="form-control">
-                          <option disabled>Choose...</option>
-                          <option value="Black">Black</option>
-                          <option value="Blue">Blue</option>
-                          <option value="Green">Green</option>
-                          <option value="Indigo">Indigo</option>
-                          <option value="Orange">Orange</option>
-                          <option value="Red">Red</option>
-                          <option value="Silver">Silver</option>
-                          <option value="Violet">Violet</option>
-                          <option value="Yellow">Yellow</option>
-                        </select>
-                      </div>
-                      <div class="form-row">
-                        <label for="engineSize" class="col-form-label">Enginer Size</label>
-                        <input type="number" class="form-control" id="engineSize" name="engineSize" placeholder="Engine Size" aria-describedby="engineSizeHelp" min="1" max="30">
-                        <small id="engineSizeHelp" class="form-text text-muted">Enginer Size should be between 1 - 30</small>
-                      </div>
-                      <div class="form-row">
-                        <label for="bladeSize" class="col-form-label">Blade Size</label>
-                        <input type="number" class="form-control" id="bladeSize" name="bladeSize" placeholder="Blade Size" aria-describedby="bladeSizeHelp" min="1" max="30">
-                        <small id="bladeSizeHelp" class="form-text text-muted">Blade Size should be between 1 - 30</small>
-                      </div>
-                      <div class="form-row">
-                        <label for="equipmentType" class="col-form-label">Equipment Type</label>
-                        <select id="equipmentType" class="form-control">
-                          <option disabled selected>Choose...</option>
-                          <option value="Type 1">Type 1</option>
-                          <option value="Type 2">Type 2</option>
-                          <option value="Type 3">Type 3</option>
-                          <option value="Type 4">Type 4</option>
-                          <option value="Type 5">Type 5</option>
-                          <option value="Type 6">Type 6</option>
-                        </select>
-                      </div>
-                      <div class="form-row">
-                        <label for="equipmentBrand" class="col-form-label">Equipment Type</label>
-                        <select id="equipmentBrand" class="form-control">
-                          <option disabled selected>Choose...</option>
-                          <option value="Brand 1">Brand 1</option>
-                          <option value="Brand 2">Brand 2</option>
-                          <option value="Brand 3">Brand 3</option>
-                          <option value="Brand 4">Brand 4</option>
-                          <option value="Brand 5">Brand 5</option>
-                          <option value="Brand 6">Brand 6</option>
-                        </select>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="overlayModalButtonLabel">Add</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!--</form>-->
+          </form>
 
           <!-- modal-->
           <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
@@ -272,7 +186,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>
+                  <p id="confirmationMessage">
                     Are you sure you want to DELETE the record?
                   </p>
                 </div>
@@ -283,6 +197,84 @@
               </div>
             </div>
           </div>
+
+          <!-- Equipment Overlay -->
+          <div class="modal fade" id="equipmentModal" tabindex="-1" role="dialog" aria-labelledby="equipmentModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="equipmentModalLabel">Equipment</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="equipmentForm">
+                      <div class="modal-body">
+                        <div class="form-row">
+                          <label for="equipmentDescription" class="col-form-label">Description</label>
+                          <textarea class="form-control" id="equipmentDescription" rows="2" required></textarea>
+                        </div>
+                        <div class="form-row">
+                          <label for="inputColour" class="col-form-label">Colour</label>
+                          <select id="inputColour" class="form-control" required>
+                            <option disabled selected></option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Green">Green</option>
+                            <option value="Indigo">Indigo</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Red">Red</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Violet">Violet</option>
+                            <option value="Yellow">Yellow</option>
+                          </select>
+                        </div>
+                        <div class="form-row">
+                          <label for="engineSize" class="col-form-label">Engine Size</label>
+                          <input type="number" class="form-control" id="engineSize" name="engineSize" placeholder="Engine Size" aria-describedby="engineSizeHelp" min="1" max="30">
+                          <small id="engineSizeHelp" class="form-text text-muted">Enginer Size should be between 1 - 30</small>
+                        </div>
+                        <div class="form-row">
+                          <label for="bladeSize" class="col-form-label">Blade Size</label>
+                          <input type="number" class="form-control" id="bladeSize" name="bladeSize" placeholder="Blade Size" aria-describedby="bladeSizeHelp" min="1" max="30">
+                          <small id="bladeSizeHelp" class="form-text text-muted">Blade Size should be between 1 - 30</small>
+                        </div>
+                        <div class="form-row">
+                          <label for="equipmentType" class="col-form-label">Equipment Type</label>
+                          <select id="equipmentType" class="form-control" required>
+                            <option disabled selected></option>
+                            <option value="Belt">Belt</option>
+                            <option value="Blade">Blade</option>
+                            <option value="Engine Sump">Engine Sump</option>
+                            <option value="Governor Arm">Governor Arm</option>
+                            <option value="Governor Gear">Governor Gear</option>
+                            <option value="Sprockets">Sprockets</option>
+                            <option value="Wheel Motor">Wheel Motor</option>
+                            <option value="Wheel Rims">Wheel Rims</option>                           
+                          </select>
+                        </div>
+                        <div class="form-row">
+                          <label for="equipmentBrand" class="col-form-label">Equipment Brand</label>
+                          <select id="equipmentBrand" class="form-control" required>
+                            <option disabled selected></option>
+                            <option value="Briggs and Stratton">Briggs and Stratton</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Husqvarna">Husqvarna</option>
+                            <option value="Hydro-Gear">Hydro-Gear</option>
+                            <option value="Snapper">Snapper</option>
+                            <option value="Universal">Universal</option>
+                          </select>
+                        </div>
+                      
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
           <!-- end modal-->
         </main>
       </div>
@@ -293,8 +285,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

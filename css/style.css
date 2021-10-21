@@ -129,6 +129,12 @@ button.btn.btn-link {
   margin-bottom: 50px;
 }
 
+.data-link {
+  text-decoration: #61B15A;
+  color: #007bff !important;
+  cursor: pointer;
+}
+
 /* buttons */
 .btn-third {
   background: #d11a2a;
