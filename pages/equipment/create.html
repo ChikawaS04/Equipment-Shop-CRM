@@ -39,21 +39,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/customer/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                  Customers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/equipment/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  Equipments
-                </a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
                   Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/product/index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/customer/index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  Customers
                 </a>
               </li>
               <li class="nav-item">
@@ -63,6 +63,7 @@
                 </a>
               </li>
             </ul>
+
           </div>
         </nav>
 
@@ -83,33 +84,33 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required>
+                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
+                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
                     <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                     <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
                 </div>
               </div>
               <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" dressplaceholder="Address" aria-describedby="addressHelp" maxlength="150">
+                <input type="text" class="form-control" id="address" name="address" dressplaceholder="Address" aria-describedby="addressHelp">
                 <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
               </div>
               <div class="form-row">

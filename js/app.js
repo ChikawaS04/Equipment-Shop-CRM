@@ -2,7 +2,18 @@ window.addEventListener("load",function(){
   let currentURL = window.location.href;
   let btnSaveIsClicked = false;
   var jsonString = localStorage.getItem("customerObject");
-  //this.localStorage.clear();
+
+  let curday = function(sp){
+    today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //As January is 0.
+    var yyyy = today.getFullYear();
+    
+    if(dd<10) dd='0'+dd;
+    if(mm<10) mm='0'+mm;
+    return (mm+sp+dd+sp+yyyy);
+  };
+
   if(jsonString==null) 
   {
     loadCustomerData(); //loads customer data from json and store it on the local storage
@@ -24,25 +35,51 @@ window.addEventListener("load",function(){
         var retrievedObject = JSON.parse(jsonString);
         let selectedID = retrievedObject.length + 1
 
-        let newCustomer = {
-          "id": selectedID,
-          "firstName": document.getElementById("firstName").value,
-          "middleName": document.getElementById("middleName").value,
-          "lastName": document.getElementById("lastName").value,
-          "email": document.getElementById("email").value,
-          "phone": document.getElementById("phone").value,
-          "address": document.getElementById("address").value,
-          "province": document.getElementById("province").value,
-          "city": document.getElementById("city").value,
-          "postalCode": document.getElementById("postalCode").value,
-          "equipment": []
-        };
-        retrievedObject.push(newCustomer);
-
-        localStorage.setItem("customerObject", JSON.stringify(retrievedObject)); 
-        localStorage.setItem("currentCustomer", selectedID);
-        btnSaveIsClicked = true;
-        
+        if (currentURL.includes("/pages/customer/create.html"))
+        {
+          if (document.getElementById("firstName").value != "" && document.getElementById("lastName").value != "" && document.getElementById("email").value != "" && document.getElementById("phone").value != "" && document.getElementById("address").value != "" && document.getElementById("province").value != "" && document.getElementById("city").value != "" && document.getElementById("postalCode").value != "")
+          {
+            let newCustomer = {
+              "id": selectedID,
+              "firstName": document.getElementById("firstName").value,
+              "middleName": document.getElementById("middleName").value,
+              "lastName": document.getElementById("lastName").value,
+              "email": document.getElementById("email").value,
+              "phone": document.getElementById("phone").value,
+              "address": document.getElementById("address").value,
+              "province": document.getElementById("province").value,
+              "city": document.getElementById("city").value,
+              "postalCode": document.getElementById("postalCode").value,
+              "equipment": []
+            };
+            retrievedObject.push(newCustomer);
+            saveCustomerRecord(retrievedObject);
+            localStorage.setItem("currentCustomer", selectedID);
+            alert('Record Successfully Added!');
+          }
+          btnSaveIsClicked = true;
+        }
+        else
+        {
+          let retrievedObject = JSON.parse(localStorage.getItem("customerObject"));
+          let currentCustomerID = localStorage.getItem("currentCustomer");
+          let index= retrievedObject.findIndex(c => c.id == currentCustomerID);
+   
+          if (index > -1) {
+            retrievedObject[index].firstName = document.getElementById("firstName").value;
+            retrievedObject[index].middleName = document.getElementById("middleName").value,
+            retrievedObject[index].lastName = document.getElementById("lastName").value,
+            retrievedObject[index].email = document.getElementById("email").value,
+            retrievedObject[index].phone = document.getElementById("phone").value,
+            retrievedObject[index].address = document.getElementById("address").value,
+            retrievedObject[index].province = document.getElementById("province").value,
+            retrievedObject[index].city = document.getElementById("city").value,
+            retrievedObject[index].postalCode = document.getElementById("postalCode").value,
+            saveCustomerRecord(retrievedObject);
+            alert('Record Successfully Updated!');
+            window.location.href = "/pages/customer/index.html";
+          } 
+        }
       },false);
     }
   }
@@ -172,8 +209,107 @@ window.addEventListener("load",function(){
           $("#btnCustomerDeleteRecord").show();
           document.getElementById("confirmationMessage").innerHTML = "Are you sure you want to DELETE the record?";
         }
-        console.log(customerData[0].equipment.length); 
+
       },false);
+
+      document.getElementById("btnAddEquipment").addEventListener("click",function()
+      {
+        document.getElementById("equipmentSerial").value = "";
+        document.getElementById("equipmentDescription").value = "";
+        document.getElementById("inputColour").value = "";
+        document.getElementById("engineSize").value = "";
+        document.getElementById("bladeSize").value = "";
+        document.getElementById("equipmentType").value = "";
+        document.getElementById("equipmentBrand").value = "";
+
+        $('#equipmentSerial').removeAttr('disabled');
+        $('#equipmentDescription').removeAttr('disabled');
+        $('#inputColour').removeAttr('disabled');
+        $('#engineSize').removeAttr('disabled');
+        $('#bladeSize').removeAttr('disabled');
+        $('#equipmentType').removeAttr('disabled');
+        $('#equipmentBrand').removeAttr('disabled');
+
+        $("#btnOverlayAdd").show();
+        $("#btnOverlayUpdate").hide();
+      },false);
+
+      /*Add Equipment */
+
+      document.getElementById("btnOverlayAdd").addEventListener("click",function()
+      {
+
+        if(validateEquipment())
+        {
+          let retrievedObject = JSON.parse(localStorage.getItem("customerObject"));
+          let currentCustomerID = localStorage.getItem("currentCustomer");
+          
+          let index= retrievedObject.findIndex(c => c.id == currentCustomerID);
+          let nextEquipmentID = retrievedObject[retrievedObject.length-1].equipment[retrievedObject[retrievedObject.length-1].equipment.length-1].id + 1;
+
+          let newCustomerEquipment = {
+            "id": nextEquipmentID,
+            "serial": document.getElementById("equipmentSerial").value,
+            "description": document.getElementById("equipmentDescription").value,
+            "color": document.getElementById("inputColour").value,
+            "engineSize": document.getElementById("engineSize").value,
+            "bladeSize": document.getElementById("bladeSize").value,
+            "email": document.getElementById("equipmentType").value,
+            "phone": document.getElementById("equipmentBrand").value,
+            "Date_Checkin": curday("-")
+          };
+          retrievedObject[index].equipment.push(newCustomerEquipment);
+
+          saveCustomerRecord(retrievedObject);
+          localStorage.setItem("currentCustomer", selectedID);
+        }
+      },false);
+
+      document.getElementById("btnOverlayUpdate").addEventListener("click",function()
+      {
+
+        if(validateEquipment())
+        {
+          let retrievedObject = JSON.parse(localStorage.getItem("customerObject"));
+          let currentCustomerID = localStorage.getItem("currentCustomer");
+          
+          let index= retrievedObject.findIndex(c => c.id == currentCustomerID);
+          //let nextEquipmentID = retrievedObject[retrievedObject.length-1].equipment[retrievedObject[retrievedObject.length-1].equipment.length-1].id + 1;
+          let nextEquipmentID = 5000;
+  
+          console.log(nextEquipmentID);
+
+          let newCustomerEquipment = {
+            "id": nextEquipmentID,
+            "serial": document.getElementById("equipmentSerial").value,
+            "description": document.getElementById("equipmentDescription").value,
+            "color": document.getElementById("inputColour").value,
+            "engineSize": document.getElementById("engineSize").value,
+            "bladeSize": document.getElementById("bladeSize").value,
+            "email": document.getElementById("equipmentType").value,
+            "phone": document.getElementById("equipmentBrand").value,
+            "Date_Checkin": curday("-")
+          };
+          retrievedObject[index].equipment.push(newCustomerEquipment);
+
+          saveCustomerRecord(retrievedObject);
+          localStorage.setItem("currentCustomer", selectedID);
+        }
+      },false);
+
+      
+      
+      function validateEquipment()
+      {
+        let retVal = true;
+                
+        if (document.getElementById("equipmentSerial").value == "" || document.getElementById("equipmentDescription").value == "" || document.getElementById("inputColour").value == "" || document.getElementById("equipmentType").value == "" || document.getElementById("equipmentBrand").value == "")
+        {
+          retVal = false
+        }
+        console.log(retVal);
+        return retVal;
+      }
     }
 
     document.getElementById("customerEditForm").addEventListener("submit",function(event)
@@ -184,6 +320,7 @@ window.addEventListener("load",function(){
       }
       
     },false);
+
   }
 
   /***This is for general function to use ***/
@@ -341,7 +478,6 @@ window.addEventListener("load",function(){
   function loadEquipmentDetails(customerData) {
     let output = "";
     let custID = customerData[0].id;
-    console.log(custID);
     
     for(c of customerData[0].equipment) {
       output +="<tr>";
@@ -356,6 +492,8 @@ window.addEventListener("load",function(){
 
     $(".data-link").click(function(){ //This enables the clicking on the customer data to link to its details
       localStorage.setItem("currentEquipment", $(this).attr("dataid"));
+      $("#btnOverlayAdd").hide();
+      $("#btnOverlayUpdate").show();
       getEquipmentDetails($(this).attr("custid"), $(this).attr("dataid"))
     });
 
@@ -367,12 +505,34 @@ window.addEventListener("load",function(){
 
     let selectedCustomer = retrievedObject.filter(cust => cust.id == customerID);
     let equipmentCustomer = selectedCustomer[0].equipment.filter(e => e.id == equipmentID);
-    console.log(equipmentCustomer);
+    
+    document.getElementById("equipmentSerial").value = equipmentCustomer[0].serial;
     document.getElementById("equipmentDescription").value = equipmentCustomer[0].description;
     document.getElementById("inputColour").value = equipmentCustomer[0].color;
     document.getElementById("engineSize").value = equipmentCustomer[0].engineSize;
     document.getElementById("bladeSize").value = equipmentCustomer[0].bladeSize;
     document.getElementById("equipmentType").value = equipmentCustomer[0].type;
     document.getElementById("equipmentBrand").value = equipmentCustomer[0].brand;
-  }    
+
+    if (equipmentCustomer[0].Date_Checkout.trim() == "")
+    {
+      $("#btnOverlayCheckOut").show();
+    }
+    else
+    {
+      $('#equipmentSerial').attr('disabled', 'disabled');
+      $('#equipmentDescription').attr('disabled', 'disabled');
+      $('#inputColour').attr('disabled', 'disabled');
+      $('#engineSize').attr('disabled', 'disabled');
+      $('#bladeSize').attr('disabled', 'disabled');
+      $('#equipmentType').attr('disabled', 'disabled');
+      $('#equipmentBrand').attr('disabled', 'disabled');
+      $("#btnOverlayCheckOut").hide();
+    }
+  }
+
+  function saveCustomerRecord(retrievedObject)
+  {
+    localStorage.setItem("customerObject", JSON.stringify(retrievedObject)); 
+  }
 });

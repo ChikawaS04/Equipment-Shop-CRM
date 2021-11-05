@@ -140,3 +140,15 @@ button.btn.btn-link {
   background: #d11a2a;
   color: #fff;
 }
+
+#btnOverlayAdd {
+  display: none;
+}
+
+#btnOverlayUpdate {
+  display: none;
+}
+
+#btnOverlayCheckOut {
+  display: none;
+}

@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>View Customer</title>
+        <title>Create Customer</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,21 +42,27 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/product/index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/pages/customer/index.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                   Customers
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/equipment/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  Equipments
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Orders
+                <a class="nav-link" href="/pages/Equipment/index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  Equipment
                 </a>
               </li>
               <li class="nav-item">
@@ -66,6 +72,7 @@
                 </a>
               </li>
             </ul>
+
           </div>
         </nav>
 
@@ -74,65 +81,84 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
-                <li class="breadcrumb-item active" aria-current="page">View Customer</li>
+                <li class="breadcrumb-item"><a href="/pages/customer/index.html">Equipment</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View Equipment</li>
               </ol>
             </nav>
-            <h1 class="h2">View Customer</h1>
+            <h1 class="h2">View Equipment</h1>
           </div>
 
           <form action="/pages/customer/index.html" method="" id="customerEditForm">
-              <h2>Customer Information</h2>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required disabled>
+            <form id="equipmentForm">
+              <div class="modal-body">
+                <div class="form-row">
+                  <label for="equipmentDescription" class="col-form-label">Description</label>
+                  <textarea class="form-control" id="equipmentDescription" rows="2" required></textarea>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50" disabled>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required disabled>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" disabled>
-                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled required>
-                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150" disabled>
-                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="province">Province</label>
-                  <select id="province" name="province" class="form-control" disabled>
+                <div class="form-row">
+                  <label for="inputColour" class="col-form-label">Colour</label>
+                  <select id="inputColour" class="form-control" required>
                     <option disabled selected></option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Indigo">Indigo</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Red">Red</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Violet">Violet</option>
+                    <option value="Yellow">Yellow</option>
                   </select>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="city">City</label>
-                  <select id="city" name="city" class="form-control" disabled>
+                <div class="form-row">
+                  <label for="engineSize" class="col-form-label">Engine Size</label>
+                  <input type="number" class="form-control" id="engineSize" name="engineSize" placeholder="Engine Size" aria-describedby="engineSizeHelp" min="1" max="30">
+                  <small id="engineSizeHelp" class="form-text text-muted">Enginer Size should be between 1 - 30</small>
+                </div>
+                <div class="form-row">
+                  <label for="bladeSize" class="col-form-label">Blade Size</label>
+                  <input type="number" class="form-control" id="bladeSize" name="bladeSize" placeholder="Blade Size" aria-describedby="bladeSizeHelp" min="1" max="30">
+                  <small id="bladeSizeHelp" class="form-text text-muted">Blade Size should be between 1 - 30</small>
+                </div>
+                <div class="form-row">
+                  <label for="seriesnumber" class="col-form-label">Series Number</label>
+                  <input type="text" class="form-control" id="seriesnumber" name="seriesnumber" placeholder="Blade Size" aria-describedby="serialNumberHelp" min="1" max="30">
+                </div>
+                <div class="form-row">
+                  <label for="equipmentType" class="col-form-label">Equipment Type</label>
+                  <select id="equipmentType" class="form-control" required>
                     <option disabled selected></option>
+                    <option value="Belt">Belt</option>
+                    <option value="Blade">Blade</option>
+                    <option value="Engine Sump">Engine Sump</option>
+                    <option value="Governor Arm">Governor Arm</option>
+                    <option value="Governor Gear">Governor Gear</option>
+                    <option value="Sprockets">Sprockets</option>
+                    <option value="Wheel Motor">Wheel Motor</option>
+                    <option value="Wheel Rims">Wheel Rims</option>                           
                   </select>
                 </div>
-                <div class="form-group col-md-2">
-                  <label for="postalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" disabled>
+                <div class="form-row">
+                  <label for="equipmentBrand" class="col-form-label">Equipment Brand</label>
+                  <select id="equipmentBrand" class="form-control" required>
+                    <option disabled selected></option>
+                    <option value="Briggs and Stratton">Briggs and Stratton</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Husqvarna">Husqvarna</option>
+                    <option value="Hydro-Gear">Hydro-Gear</option>
+                    <option value="Snapper">Snapper</option>
+                    <option value="Universal">Universal</option>
+                  </select>
                 </div>
-              </div>
+              
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+            --
+              
               <button type="submit" class="btn btn-primary" id="btnEdit">Edit</button>
               <button type="submit" class="btn btn-primary" id="btnSave" style="display:none;">Save</button>
               <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal" id="btnDelete" style="display:none;">Delete</button>
@@ -207,78 +233,58 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="equipmentForm">
-                      <div class="modal-body">
-                        <div class="form-row">
-                          <label for="equipmentSerial" class="col-form-label">Serial Number</label>
-                          <input type="text" class="form-control" id="equipmentSerial" name="equipmentSerial" placeholder="Serial Number" maxlength="15" required>
-                        </div>
-                        <div class="form-row">
-                          <label for="equipmentDescription" class="col-form-label">Description</label>
-                          <textarea class="form-control" id="equipmentDescription" rows="2" required maxlength="200"></textarea>
-                        </div>
-                        <div class="form-row">
-                          <label for="inputColour" class="col-form-label">Colour</label>
-                          <select id="inputColour" class="form-control" required>
-                            <option disabled selected></option>
-                            <option value="Black">Black</option>
-                            <option value="Blue">Blue</option>
-                            <option value="Green">Green</option>
-                            <option value="Grey">Grey</option>
-                            <option value="Indigo">Indigo</option>
-                            <option value="Orange">Orange</option>
-                            <option value="Red">Red</option>
-                            <option value="Silver">Silver</option>
-                            <option value="Violet">Violet</option>
-                            <option value="Yellow">Yellow</option>
-                          </select>
-                        </div>
-                        <div class="form-row">
-                          <label for="engineSize" class="col-form-label">Engine Size</label>
-                          <input type="number" class="form-control" id="engineSize" name="engineSize" placeholder="Engine Size" aria-describedby="engineSizeHelp" >
-                          <small id="engineSizeHelp" class="form-text text-muted">Enginer Size should be between 1 - 30</small>
-                        </div>
-                        <div class="form-row">
-                          <label for="bladeSize" class="col-form-label">Blade Size</label>
-                          <input type="number" class="form-control" id="bladeSize" name="bladeSize" placeholder="Blade Size" aria-describedby="bladeSizeHelp">
-                          <small id="bladeSizeHelp" class="form-text text-muted">Blade Size should be between 1 - 30</small>
-                        </div>
-                        <div class="form-row">
-                          <label for="equipmentType" class="col-form-label">Equipment Type</label>
-                          <select id="equipmentType" class="form-control" required>
-                            <option disabled selected></option>
-                            <option value="Belt">Belt</option>
-                            <option value="Blade">Blade</option>
-                            <option value="Engine Sump">Engine Sump</option>
-                            <option value="Filter">Filter</option>
-                            <option value="Governor Arm">Governor Arm</option>
-                            <option value="Governor Gear">Governor Gear</option>
-                            <option value="Sprockets">Sprockets</option>
-                            <option value="Wheel Motor">Wheel Motor</option>
-                            <option value="Wheel Rims">Wheel Rims</option>                           
-                          </select>
-                        </div>
-                        <div class="form-row">
-                          <label for="equipmentBrand" class="col-form-label">Equipment Brand</label>
-                          <select id="equipmentBrand" class="form-control" required>
-                            <option disabled selected></option>
-                            <option value="Briggs and Stratton">Briggs and Stratton</option>
-                            <option value="Honda">Honda</option>
-                            <option value="Husqvarna">Husqvarna</option>
-                            <option value="Hydro-Gear">Hydro-Gear</option>
-                            <option value="Snapper">Snapper</option>
-                            <option value="Universal">Universal</option>
-                          </select>
-                        </div>
-                      
-                    </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id="btnOverlayAdd">Add</button>
-                            <button type="submit" class="btn btn-primary" id="btnOverlayUpdate">Update</button>
-                            <button type="submit" class="btn btn-third" id="btnOverlayCheckOut">Check Out</button>
-                        </div>
-                    </form>
+                    <!--customer-->
+                    <h2>Customer</h2>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="desciption">First Name</label>
+                  <input type="text" class="form-control" id="description" name="desciption" placeholder="First Name" required disabled>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" disabled>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required disabled>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" disabled>
+                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
+                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" disabled>
+                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="province">Province</label>
+                  <select id="province" name="province" class="form-control" disabled>
+                    <option disabled selected></option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="city">City</label>
+                  <select id="city" name="city" class="form-control" disabled>
+                    <option disabled selected></option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="postalCode">Postal Code</label>
+                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" disabled>
+                </div>
+              </div>
                 </div>
             </div>
         </div>
