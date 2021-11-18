@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>List of Customers</title>
+        <title>List of Cities</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -114,22 +114,22 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Customers</li>
+                <li class="breadcrumb-item active" aria-current="page">Cities</li>
               </ol>
             </nav>
-            <h1 class="h2">List of Customers</h1>
+            <h1 class="h2">List of Cities</h1>
           </div>
 
           <form action="https://webdevbasics.net/scripts/demo.php" method="post">
             <div class="form-row">
               <div class="form-group col-md-8">
                 <label for="searchtext">Search For</label>
-                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Name/Email Address/Phone Number" required>
+                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="City">
               </div>
               <div class="form-group col-md-4">
                 <a href="create.html"><button type="button" class="btn btn-primary right">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                  New Customer</a>
+                  New Brand</a>
                 </button>
               </div> 
             </div>
@@ -137,13 +137,31 @@
               <table class="table table-striped table-sm">
                 <thead>
                   <tr>
-                    <th>Customer Number</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
+                    <th>Equipment Brand</th>
                   </tr>
                 </thead>
-                <tbody id="customerDataTable">
+                <tbody id="equipmentBrandDataTable">
+                  <tr>
+                    <td class="data-link" dataid="1">Briggs and Stratton</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="2">Honda</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="3">Honda</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="4">Husqvarna</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="5">Hydro-Gear</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="6">Snapper</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="7">Universal</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
