@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>List of Equipment</title>
+        <title>List of Province</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -114,49 +114,71 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/pages/lookup/type/index.html">Equipment Type</a></li>
-                <li class="breadcrumb-item active" aria-current="page">New Equipment Type</li>
+                <li class="breadcrumb-item active" aria-current="page">Province</li>
               </ol>
             </nav>
-            <h1 class="h2">New Equipment Type</h1>
+            <h1 class="h2">List of Province</h1>
           </div>
 
-          <form action="/pages/customer/edit.html" method="">
-              <h2>Equipment Type Information</h2>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="equipmentTypeName">Name</label>
-                  <input type="text" class="form-control" id="equipmentTypeName" name="equipmentTypeName" placeholder="Type Name" maxlength="100" required>
-                </div>
+          <form action="https://webdevbasics.net/scripts/demo.php" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <label for="searchtext">Search For</label>
+                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Province">
               </div>
-
-              <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
-              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal">Clear</button>
-          </form>
-
-          <!-- modal-->
-          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="confirmationModalLabel"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    Do you wish to proceed on clearing all the values?
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClearAll">Clear All</button>
-                </div>
-              </div>
+               
             </div>
-          </div>
-          <!-- end modal-->
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Province</th>
+                  </tr>
+                </thead>
+                <tbody id="equipmentBrandDataTable">
+                  <tr>
+                    <td class="data-link" dataid="1">Alberta</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="2">British Columbia</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="3">Manitoba</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="4">New Brunswick</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="5">Newfoundland and Labrador</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="6">Northwest Territories</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="7">Nova Scotia</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="4">Nunavut</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="5">Ontario</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="6">Prince Edward Island</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="7">Quebec</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="6">Saskatchewan</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" dataid="7">Yukon</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
         </main>
       </div>
     </div>

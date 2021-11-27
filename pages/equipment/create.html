@@ -57,9 +57,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/pages/Invoice/index.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Orders
+                  Invoices
                 </a>
               </li>
               <li class="nav-item">
@@ -123,63 +123,24 @@
           </div>
 
           <form action="/pages/customer/edit.html" method="">
-              <h2>Customer Information</h2>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
-                </div>
+              <h2>Equipment Information</h2>
+              <div class="row">
+                  <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#overlayModal" id="btnSelectCustomer" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action" data-placement="top" title="Search and Select Customer">
+                      Select Customer
+                    </button>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Customer" maxlength="50" readonly required>
+                  </div>
               </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
-                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" dressplaceholder="Address" aria-describedby="addressHelp">
-                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="province">Province</label>
-                  <select id="province" name="province" class="form-control">
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="city">City</label>
-                  <select id="city" name="city" class="form-control">
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-2">
-                  <label for="postalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code">
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
-              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal">Clear</button>
+              
+              <button type="submit" class="btn btn-primary" id="btnSave" style="display: none;">Save</button>
+              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" style="display: none;">Clear</button>
           </form>
 
           <!-- modal-->
-          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
+          <div class="modal fade" id="overlayModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -190,7 +151,10 @@
                 </div>
                 <div class="modal-body">
                   <p>
-                    Do you wish to proceed on clearing all the values?
+                    <div class="form-group col-md-4">
+                      <label for="firstName">Search</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required>
+                    </div>
                   </p>
                 </div>
                 <div class="modal-footer">
@@ -213,7 +177,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="/js/app.js"></script>
-
+    <script src="/js/equipment.js"></script>
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     

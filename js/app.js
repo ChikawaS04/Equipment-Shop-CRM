@@ -29,58 +29,60 @@ window.addEventListener("load",function(){
         loadCity();
       });
 
-      document.getElementById("btnSave").addEventListener("click",function(event)
-      {
+      Mousetrap.bind(["f2", "ctrl+s"], function(e) {
+        $( "#btnSave" ).click();
+        $('#create')[0].checkValidity();
+        var $myForm = $('#create');
 
-        var retrievedObject = JSON.parse(jsonString);
-        let selectedID = retrievedObject.length + 1
+        if (!$myForm[0].checkValidity()) {
+            // If the form is invalid, submit it. The form won't actually submit;
+            // this will just cause the browser to display the native HTML5 error messages.
+            $myForm.find(':btnSubmit').click();
+        }
+      });
 
-        if (currentURL.includes("/pages/customer/create.html"))
+      Mousetrap.bind(["f4", "ctrl+c"], function(e) {
+        if(currentURL.includes("/pages/customer/create.html"))
         {
-          if (document.getElementById("firstName").value != "" && document.getElementById("lastName").value != "" && document.getElementById("email").value != "" && document.getElementById("phone").value != "" && document.getElementById("address").value != "" && document.getElementById("province").value != "" && document.getElementById("city").value != "" && document.getElementById("postalCode").value != "")
-          {
-            let newCustomer = {
-              "id": selectedID,
-              "firstName": document.getElementById("firstName").value,
-              "middleName": document.getElementById("middleName").value,
-              "lastName": document.getElementById("lastName").value,
-              "email": document.getElementById("email").value,
-              "phone": document.getElementById("phone").value,
-              "address": document.getElementById("address").value,
-              "province": document.getElementById("province").value,
-              "city": document.getElementById("city").value,
-              "postalCode": document.getElementById("postalCode").value,
-              "equipment": []
-            };
-            retrievedObject.push(newCustomer);
-            saveCustomerRecord(retrievedObject);
-            localStorage.setItem("currentCustomer", selectedID);
-            alert('Record Successfully Added!');
-          }
-          btnSaveIsClicked = true;
+          $("#btnClear").click();
+          document.body.style.paddingRight = "0px";
         }
         else
         {
-          let retrievedObject = JSON.parse(localStorage.getItem("customerObject"));
-          let currentCustomerID = localStorage.getItem("currentCustomer");
-          let index= retrievedObject.findIndex(c => c.id == currentCustomerID);
-   
-          if (index > -1) {
-            retrievedObject[index].firstName = document.getElementById("firstName").value;
-            retrievedObject[index].middleName = document.getElementById("middleName").value,
-            retrievedObject[index].lastName = document.getElementById("lastName").value,
-            retrievedObject[index].email = document.getElementById("email").value,
-            retrievedObject[index].phone = document.getElementById("phone").value,
-            retrievedObject[index].address = document.getElementById("address").value,
-            retrievedObject[index].province = document.getElementById("province").value,
-            retrievedObject[index].city = document.getElementById("city").value,
-            retrievedObject[index].postalCode = document.getElementById("postalCode").value,
-            saveCustomerRecord(retrievedObject);
-            alert('Record Successfully Updated!');
-            window.location.href = "/pages/customer/index.html";
-          } 
+          $("#btnClose").click();         
         }
+      });
+
+
+      Mousetrap.bind(["f6", "ctrl+c"], function(e) {
+        $("#btnAddEquipment").click();
+        document.body.style.paddingRight = "0px";
+      });
+
+      document.getElementById("btnSave").addEventListener("click",function(event)
+      {
+        btnSave();
       },false);
+
+      let buttonClearAllClick = document.getElementById('btnClearAll');
+
+      document.getElementById("confirmationModalLabel").innerHTML = "Confirmation";
+
+      if (buttonClearAllClick != null)
+      {
+        buttonClearAllClick.addEventListener("click",function(){
+          document.getElementById("firstName").value = "";
+          document.getElementById("middleName").value = "";
+          document.getElementById("lastName").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("phone").value = "";
+          document.getElementById("address").value = "";
+          document.getElementById("province").value = "";
+          document.getElementById("city").value = "";
+          document.getElementById("postalCode").value = "";
+          document.body.style.paddingRight = "0px";
+        });
+      }
     }
   }
 
@@ -128,7 +130,7 @@ window.addEventListener("load",function(){
       document.getElementById("confirmationMessage").innerHTML = "Are you sure you want to DELETE the record?";
     }
 
-    let buttonClearAllClick = document.getElementById('btnClearAll');
+    
     let btnCustomerDeleteRecord = document.getElementById('btnCustomerDeleteRecord');
 
     let buttonClearClick= document.getElementById('btnClear');
@@ -136,21 +138,28 @@ window.addEventListener("load",function(){
     if (buttonClearClick != null)
     {
       buttonClearClick.addEventListener("click",function(){
-        document.getElementById("confirmationModalLabel").innerHTML = "Confirmation";
-      });
+        let buttonClearAllClick = document.getElementById('btnClearAll');
 
-      buttonClearAllClick.addEventListener("click",function(){
-        document.getElementById("firstName").value = "";
-        document.getElementById("middleName").value = "";
-        document.getElementById("lastName").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("address").value = "";
-        document.getElementById("province").value = "";
-        document.getElementById("city").value = "";
-        document.getElementById("postalCode").value = "";
+        document.getElementById("confirmationModalLabel").innerHTML = "Confirmation";
+
+        if (buttonClearAllClick != null)
+        {
+          buttonClearAllClick.addEventListener("click",function(){
+            document.getElementById("firstName").value = "";
+            document.getElementById("middleName").value = "";
+            document.getElementById("lastName").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("address").value = "";
+            document.getElementById("province").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("postalCode").value = "";
+          });
+        }
       });
     }
+
+
 
     let btnEditClick = this.document.getElementById("btnEdit");
 
@@ -534,5 +543,57 @@ window.addEventListener("load",function(){
   function saveCustomerRecord(retrievedObject)
   {
     localStorage.setItem("customerObject", JSON.stringify(retrievedObject)); 
+  }
+
+  function btnSave()
+  {
+    var retrievedObject = JSON.parse(jsonString);
+    let selectedID = retrievedObject.length + 1
+
+    if (currentURL.includes("/pages/customer/create.html"))
+    {
+      if (document.getElementById("firstName").value != "" && document.getElementById("lastName").value != "" && document.getElementById("email").value != "" && document.getElementById("phone").value != "" && document.getElementById("address").value != "" && document.getElementById("province").value != "" && document.getElementById("city").value != "" && document.getElementById("postalCode").value != "" && document.getElementById("phone").value.length!=12)
+      {
+        let newCustomer = {
+          "id": selectedID,
+          "firstName": document.getElementById("firstName").value,
+          "middleName": document.getElementById("middleName").value,
+          "lastName": document.getElementById("lastName").value,
+          "email": document.getElementById("email").value,
+          "phone": document.getElementById("phone").value,
+          "address": document.getElementById("address").value,
+          "province": document.getElementById("province").value,
+          "city": document.getElementById("city").value,
+          "postalCode": document.getElementById("postalCode").value,
+          "equipment": []
+        };
+        retrievedObject.push(newCustomer);
+        saveCustomerRecord(retrievedObject);
+        localStorage.setItem("currentCustomer", selectedID);
+        alert('Record Successfully Added!');
+      }
+      btnSaveIsClicked = true;
+    }
+    else
+    {
+      let retrievedObject = JSON.parse(localStorage.getItem("customerObject"));
+      let currentCustomerID = localStorage.getItem("currentCustomer");
+      let index= retrievedObject.findIndex(c => c.id == currentCustomerID);
+
+      if (index > -1) {
+        retrievedObject[index].firstName = document.getElementById("firstName").value;
+        retrievedObject[index].middleName = document.getElementById("middleName").value,
+        retrievedObject[index].lastName = document.getElementById("lastName").value,
+        retrievedObject[index].email = document.getElementById("email").value,
+        retrievedObject[index].phone = document.getElementById("phone").value,
+        retrievedObject[index].address = document.getElementById("address").value,
+        retrievedObject[index].province = document.getElementById("province").value,
+        retrievedObject[index].city = document.getElementById("city").value,
+        retrievedObject[index].postalCode = document.getElementById("postalCode").value,
+        saveCustomerRecord(retrievedObject);
+        alert('Record Successfully Updated!');
+        window.location.href = "/pages/customer/index.html";
+      } 
+    }
   }
 });

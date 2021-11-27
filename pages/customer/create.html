@@ -10,8 +10,8 @@
         <title>Create Customer</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- Custom styles for this template -->
         <link href="/css/style.css" rel="stylesheet">
 
@@ -26,7 +26,7 @@
         </li>
       </ul>
     </nav>
-
+    <span class="navbar-text">Test</span>
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -57,9 +57,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/pages/Invoice/index.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Orders
+                  Invoices
                 </a>
               </li>
               <li class="nav-item">
@@ -107,6 +107,7 @@
                 </a>
               </li>
             </ul>
+            <img src="/images/mindtech-force-logo.png" alt="MindTech">
           </div>
         </nav>
 
@@ -116,13 +117,15 @@
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
                 <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
-                <li class="breadcrumb-item active" aria-current="page">New Customer</li>
+                <li class="breadcrumb-item active" aria-current="page" styl>New Customer</li>
               </ol>
+              <small id="functionHelp" class="form-text text-muted" style="font-weight:800; color:#61B15A !important">Shortcut Keys: Press F2 to SAVE and F4 to CLEAR all fields</small>
             </nav>
             <h1 class="h2">New Customer</h1>
+            
           </div>
 
-          <form action="/pages/customer/edit.html" method="">
+          <form action="/pages/customer/edit.html" method="post" id="create">
               <h2>Customer Information</h2>
               <div class="form-row">
                 <div class="form-group col-md-4">
@@ -153,29 +156,30 @@
               </div>
               <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" dressplaceholder="Address" aria-describedby="addressHelp" maxlength="150">
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150">
                 <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="province">Province</label>
-                  <select id="province" name="province" class="form-control">
+                  <select id="province" name="province" class="form-control" placeholder="Province">
                     <option disabled selected></option>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="city">City</label>
-                  <select id="city" name="city" class="form-control">
+                  <select id="city" name="city" class="form-control" placeholder="City">
                     <option disabled selected></option>
                   </select>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="postalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code">
+                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" required>
+                  <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx (i.e. L0S 1J0)</small>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
-              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal">Clear</button>
+              <button type="submit" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Adds New Customer to the record" >Save</button>
+              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" data-placement="top" title="This clears all fields" >Clear</button>
           </form>
 
           <!-- modal-->
@@ -208,17 +212,23 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+    <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
     <script src="/js/app.js"></script>
-
+    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
     <!-- Icons -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     
     <script>
-      feather.replace()
+      $(document).ready(function(){
+        feather.replace();
+        $('[data-toggle="tooltip"]').tooltip();   
+      });
     </script>
   </body>
 

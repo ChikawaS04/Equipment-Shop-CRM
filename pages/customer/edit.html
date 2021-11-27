@@ -11,6 +11,8 @@
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!-- Custom styles for this template -->
         <link href="/css/style.css" rel="stylesheet">
@@ -60,9 +62,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/pages/Invoice/index.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Orders
+                  Invoices
                 </a>
               </li>
               <li class="nav-item">
@@ -121,67 +123,71 @@
                 <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
                 <li class="breadcrumb-item active" aria-current="page">View Customer</li>
               </ol>
+              <small id="functionHelp" class="form-text text-muted" style="font-weight:800; color:#61B15A !important">Shortcut Keys: F2 to SAVE , F4 to back to Customers List , F6 to ADD New Equipment</span></small>
             </nav>
             <h1 class="h2">View Customer</h1>
           </div>
 
           <form action="/pages/customer/index.html" method="" id="customerEditForm">
               <h2>Customer Information</h2>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required disabled>
+              <div class="group-info">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required disabled>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label for="middleName">Middle Name</label>
+                      <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50" disabled>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required disabled>
+                  </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50" disabled>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required disabled>
-                </div>
-              </div>
 
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" disabled>
-                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" disabled>
+                      <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled required>
+                      <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+                  </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled required>
-                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150" disabled>
+                  <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
                 </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="province">Province</label>
+                    <select id="province" name="province" class="form-control" disabled>
+                      <option disabled selected></option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <select id="city" name="city" class="form-control" disabled>
+                      <option disabled selected></option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" disabled required>
+                    <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx (i.e. L0S 1J0)</small>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnEdit" data-toggle="modal" data-placement="top" title="Edits selected Customer record">Edit</button>
+                <button type="submit" class="btn btn-primary" id="btnSave" style="display:none;" data-toggle="modal" data-placement="top" title="Updates selected Customer record">Save</button>
+                <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal" id="btnDelete" style="display:none;"data-placement="top" title="Deletes selected Customer record">Delete</button>
+                <button type="submit" class="btn btn-secondary" id="btnClose" data-toggle="modal" data-placement="top" title="Goes back to the Customers List">Close</button>
               </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150" disabled>
-                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="province">Province</label>
-                  <select id="province" name="province" class="form-control" disabled>
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="city">City</label>
-                  <select id="city" name="city" class="form-control" disabled>
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-2">
-                  <label for="postalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" disabled>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" id="btnEdit">Edit</button>
-              <button type="submit" class="btn btn-primary" id="btnSave" style="display:none;">Save</button>
-              <button type="submit" class="btn btn-third" data-target="#confirmationModal"  data-toggle="modal" id="btnDelete" style="display:none;">Delete</button>
-              <button type="submit" class="btn btn-secondary" id="btnClose">Close</button>
-
+              
               <div class="accordion" id="customerEquipmentList">
                 <div class="card">
                   <div class="card-header" id="equipmentList">
@@ -194,7 +200,7 @@
               
                   <div id="collapseOne" class="collapse show" aria-labelledby="equipmentList" data-parent="#customerEquipmentList">
                     <div class="card-body">
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipmentModal" id="btnAddEquipment" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipmentModal" id="btnAddEquipment" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action" data-placement="top" title="Adds Equipment to Customer's record">
                         Add Equipment
                       </button>
                       <div class="table-responsive">
@@ -259,12 +265,12 @@
                         </div>
                         <div class="form-row">
                           <label for="equipmentDescription" class="col-form-label">Description</label>
-                          <textarea class="form-control" id="equipmentDescription" rows="2" required maxlength="200"></textarea>
+                          <textarea class="form-control" id="equipmentDescription" rows="2" required maxlength="200" placeholder="Equipment Description"></textarea>
                         </div>
                         <div class="form-row">
                           <label for="inputColour" class="col-form-label">Colour</label>
                           <select id="inputColour" class="form-control" required>
-                            <option disabled selected></option>
+                            <option disabled selected>--Select Colour--</option>
                             <option value="Black">Black</option>
                             <option value="Blue">Blue</option>
                             <option value="Green">Green</option>
@@ -317,10 +323,10 @@
                       
                     </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id="btnOverlayAdd">Add</button>
-                            <button type="submit" class="btn btn-primary" id="btnOverlayUpdate">Update</button>
-                            <button type="submit" class="btn btn-third" id="btnOverlayCheckOut">Check Out</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-placement="top" title="Goes back to selected Customer record">Close</button>
+                            <button type="submit" class="btn btn-primary" id="btnOverlayAdd" data-toggle="modal" data-placement="top" title="Adds Equipment to Customer record">Add</button>
+                            <button type="submit" class="btn btn-primary" id="btnOverlayUpdate" data-toggle="modal" data-placement="top" title="Updates selected Customer record">Update</button>
+                            <button type="submit" class="btn btn-third" id="btnOverlayCheckOut" data-toggle="modal" data-placement="top" title="Customer check out the equipment">Check Out</button>
                         </div>
                     </form>
                 </div>
@@ -334,6 +340,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 
