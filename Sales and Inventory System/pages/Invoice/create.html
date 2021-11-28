@@ -138,10 +138,10 @@
                         Enter new customer information for this invoice as desired or search for an existing customer's information to begin.
                     </p>
                 </div>
-                <form action="/pages/Invoice/" method="post" id="create">
-                    <legend>  <a id="billToLegend" href="#" >Bill To ></a></legend>
+                <form action="/pages/Invoice/index.html" method="post" id="create">
+                    <legend>  <a id="billToLegend" href="#" >Bill To New ></a></legend>
               
-                <hr id="billToHR" style="background-color: #007bff;">
+                
                         <fieldset  id="billTo" style="display:none;"> <!--Hidden until drop down is clicked. This is so it isnt always displayed when a customer in the system is selected.-->
                             
                             <div class="form-row">
@@ -426,24 +426,24 @@
             let equipmentResults=document.getElementById("resultsTable");
       
             legend.onmouseover=function(){
-              hr.style.backgroundColor ="skyblue";
+              
               legend.style.color="skyblue";
               legend.style.textDecoration="none";
             }
             legend.onmouseleave=function(){
-              hr.style.backgroundColor ="lightgrey";
+              
               legend.style.color="#007bff";
             }
             legend.onclick=function(){
               
               if(fieldset.style.display=="block"){
                 fieldset.style.display="none";
-                legend.textContent="Bill To >";
-                hr.style.display="block";
+                legend.textContent="Bill To New >";
+               
               }else{
                 fieldset.style.display="block";
-                legend.textContent="Bill To ^";
-                hr.style.display="none";
+                legend.textContent="Bill To New ^";
+                
               }                  
             }
       
