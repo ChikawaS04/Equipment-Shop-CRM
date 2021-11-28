@@ -135,8 +135,7 @@
 
                 <div class="alert alert-block alert-info">
                     <p>
-                        Enter customer information for this account as desired.  Fields marked with an asterisk
-                        are required.
+                        Enter new customer information for this invoice as desired or search for an existing customer's information to begin.
                     </p>
                 </div>
                 <form action="/pages/Invoice/" method="post" id="create">
@@ -199,14 +198,7 @@
                                 <label for="postalCode">Postal Code</label>
                                 <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" required>
                             </div>
-                            <div class="form-group col-md-3" >
-                                <label for="paymentType">Payment Type</label>
-                                <select class="form-control" id="paymentType" name="paymentType" required>
-                                <option selected disabled >Select Payment Type</option>
-                                <option>Credit</option>
-                                <option>Visa Debit</option>
-                                </select>
-                            </div>
+                            
                             </div>
                     </fieldset >
                     <legend>Bill to Existing: </legend>
@@ -241,6 +233,14 @@
                                         Search Now
                                     </button>
                                 </div>
+                            </div>
+                            <div class="form-group col-md-6" >
+                                <label for="paymentType">Payment Type</label>
+                                <select class="form-control" id="paymentType" name="paymentType" required>
+                                <option selected disabled >Select Payment Type</option>
+                                <option>Credit</option>
+                                <option>Visa Debit</option>
+                                </select>
                             </div>
                         </div>
                     </fieldset>
