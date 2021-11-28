@@ -222,6 +222,7 @@ window.addEventListener("load",function(){
 
       document.getElementById("btnAddEquipment").addEventListener("click",function()
       {
+        console.log("eq");
         document.getElementById("equipmentSerial").value = "";
         document.getElementById("equipmentDescription").value = "";
         document.getElementById("inputColour").value = "";

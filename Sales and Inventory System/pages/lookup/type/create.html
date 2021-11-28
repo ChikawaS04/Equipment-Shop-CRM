@@ -6,17 +6,22 @@
     <meta name="description" content="">
     <meta name="author" content="MindTech Force">
     
-    <title>Create Customer</title>    
+    <title>Create Equipment Type</title>    
     <!--<meta name="layout" content="main"/>-->
     
     <!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>-->
         <!-- Bootstrap core CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="/js/app.js"></script>
     <script src="/js/jquery/jquery-1.8.2.min.js" type="text/javascript" ></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <link href="/css/customize-template.css" type="text/css" media="screen, projection" rel="stylesheet" />
+    <script>
+      document.getElementById("btnSave").addEventListener("click",function(event)
+      {
+        window.location.href = "/pages/lookup/type/index.html";
+      },false);
+    </script>
 
     <style>
         #body-content { padding-top: 40px;}
@@ -119,11 +124,11 @@
             <div class="row">
                 <div class="span7">
                     <header class="page-header">
-                        <h3>Create Customer</h3>
+                        <h3>Dashboard</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page"><a href="/pages/home.html">Home</a></li>
-                            <li class="breadcrumb-item" aria-current="page"><a href="/pages/customer/index.html">Customer</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">New Customer</li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="/pages/lookup/type/index.html">Equipment Type</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">New Equipment Type</li>
                         </ol>
                     </header>
                 </div>
@@ -135,71 +140,21 @@
 
                 <div class="alert alert-block alert-info">
                     <p>
-                        Enter customer information for this account as desired.  Fields marked with an asterisk
-                        are required.
+                        Enter name of the type of equipment.  Field marked with an asterisk
+                        is required.
                     </p>
                 </div>
-                <form action="/pages/customer/edit.html" method="post" id="create">
-                    <legend>Customer Information</legend><br>
-                    <div class="group-info">
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label for="firstName">First Name <span class="required">*</span></label>
-                              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required />
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="middleName">Middle Name</label>
-                                <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="lastName">Last Name <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required />
-                            </div>
-                          </div>
-            
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="email">Email address <span class="required">*</span></label>
-                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required />
-                                <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-                                <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="address">Address <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150">
-                                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label for="province">Province <span class="required">*</span></label>
-                              <select id="province" name="province" class="form-control" placeholder="Province">
-                                <option disabled selected></option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-4">
-                              <label for="city">City <span class="required">*</span></label>
-                              <select id="city" name="city" class="form-control" placeholder="City">
-                                <option disabled selected></option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-3">
-                              <label for="postalCode">Postal Code <span class="required">*</span></label>
-                              <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" required />
-                              <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx <br>(i.e. L0S 1J0)</small>
-                            </div>
-                        </div>
-                        <div class="group-button">
-                            <button type="submit" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Adds New Customer to the record">Save</button>
-                            <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" data-placement="top" title="This clears all fields" >Clear</button>
-                        </div>
+                <form action="/pages/lookup/type/index.html" method="">
+                  <h2>Equipment Type Information</h2>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="equipmentTypeName">Name <span class="required">*</span></label>
+                      <input type="text" class="form-control" id="equipmentTypeName" name="equipmentTypeName" placeholder="Type Name" maxlength="100" required>
                     </div>
+                  </div>
+    
+                  <button type="submit" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Saves Record">Save</button>
+                  <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" data-placement="top" title="Clear Fields">Clear</button>
                 </form>
 
                 <!-- modal-->

@@ -12,7 +12,6 @@ window.addEventListener("load",function(){
   document.getElementById("customerPhone").textContent = customerData[0].phone;
   document.getElementById("customerAddress").textContent = customerData[0].address + ", " + customerData[0].city + ", " + customerData[0].province + ", " +  customerData[0].postalCode;
 
-  console.log(customerData[0].equipment.length);
   if (customerData[0].equipment.length > 0) 
   {
     loadEquipmentDetails(customerData);
@@ -64,15 +63,41 @@ window.addEventListener("load",function(){
   });
 
   setTimeout(function(){ 
-    console.log("test");
     $(".data-link").click(function(){ //This enables the clicking on the customer data to link to its details
       localStorage.setItem("currentEquipment", $(this).attr("dataid"));
       $("#btnOverlayAdd").hide();
       $("#btnOverlayUpdate").show();
-      console.log("test");
       getEquipmentDetails($(this).attr("custid"), $(this).attr("dataid"));
     });
-  }, 5000);
+  }, 3000);
+
+  document.getElementById("btnAddEquipment").addEventListener("click",function()
+  {
+    console.log("eq");
+    document.getElementById("equipmentSerial").value = "";
+    document.getElementById("equipmentDescription").value = "";
+    document.getElementById("inputColour").value = "";
+    document.getElementById("engineSize").value = "";
+    document.getElementById("bladeSize").value = "";
+    document.getElementById("equipmentType").value = "";
+    document.getElementById("equipmentBrand").value = "";
+
+    $('#equipmentSerial').removeAttr('disabled');
+    $('#equipmentDescription').removeAttr('disabled');
+    $('#inputColour').removeAttr('disabled');
+    $('#engineSize').removeAttr('disabled');
+    $('#bladeSize').removeAttr('disabled');
+    $('#equipmentType').removeAttr('disabled');
+    $('#equipmentBrand').removeAttr('disabled');
+
+    $("#btnOverlayAdd").show();
+    $("#btnOverlayUpdate").hide();
+  },false);
+
+  Mousetrap.bind(["f6", "ctrl+c"], function(e) {
+    $("#btnAddEquipment").click();
+  });
+
 
   function getCustomerData(data, customerID) {
     return data.filter( customer => customer.id == customerID);      
@@ -123,6 +148,7 @@ window.addEventListener("load",function(){
       $('#equipmentType').attr('disabled', 'disabled');
       $('#equipmentBrand').attr('disabled', 'disabled');
       $("#btnOverlayCheckOut").hide();
+      $("#btnOverlayUpdate").hide();
     }
   }
 });
