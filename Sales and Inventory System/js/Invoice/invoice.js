@@ -11,12 +11,16 @@ let invenSearchResults= document.getElementById("invenSearchResults");
 let invenTextArea= document.getElementById("txtSelectedEquipment");
 let btnConfirmItemSelections=document.getElementById("confirmItemSelections");
 let invenLegend=document.getElementById("invenLegendLink");
+let btnSearch =document.getElementById('btnSearch');
 //------------------------------------
 let existingCustomerSearch=document.getElementById("searchBox");
 let existingCustomerResultsTable=document.getElementById("customerResultsTable");
-let equipmentResults=document.getElementById("resultsTable");
+//let equipmentResults=document.getElementById("resultsTable");
 let OrderDetailsSection=document.getElementById("orderDetails");
 
+window.onload=function(){
+  alert('here');
+}
 //Events-----------------------------------
 // search field on New Invoice page
 btnSearch.addEventListener('click', function(){
@@ -25,7 +29,7 @@ btnSearch.addEventListener('click', function(){
       console.log(data);
       for( let i=0; i<data.length; i++){
         
-        if(data[i].firstName.includes(existingCustomerSearch.value)){
+        if((data[i].firstName+" "+data[i].lastName).includes(existingCustomerSearch.value)){
           
           existingCustomerResultsTable.innerHTML+=`<tr>
           <td><input type="radio" name="radSearchResults" id= "${data[i].id}" value="${data[i].firstName} ${data[i].lastName}"> ${data[i].firstName +" "+ data[i].lastName}</td>
@@ -52,7 +56,7 @@ btnSearch.addEventListener('click', function(){
   
 
 })
-btnConfirmItemSelections.addEventListener('click', function(){
+btnConfirmItemSelections.addEventListener("click", function(){
   invenSearchResults.innerHTML='';
   invenDescSearch.innerHTML='';
   InvenDetailsSection.style.display='none';
@@ -224,30 +228,3 @@ searchBtn.onclick=function(){
 }
 //------------------------------------------------
 //Functions--------------------------------------
-function search(){
-    let searchResults=[];
-    $.getJSON("/json/customer.json",function(data){
-        console.log(data);
-        for( let i=0; i<data.length; i++){
-            if( existingCustomerSearch.innerHTML!="" && (data[i].firstName.includes(existingCustomerSearch.innerHTML) || data[i].phone.includes(existingCustomerSearch.innerHTML))){
-                searchResults.push(`<tr>
-                    <td>${data[i].firstName +" "+ data[i].lastName}</td>
-                    <td>${data[i].email}</td>
-                    <td>${data[i].address}, ${data[i].city},\n ${data[i].province}</td>
-                    <td>${data[i].phone}</td>
-                </tr>`)
-            }
-           
-            /*if( existingCustomerSearch.innerHTML!="" && (data[i].firstName +" "+ data[i].lastName || data[i].phone).includes(existingCustomerSearch.innerHTML) ){
-               
-            }else{
-
-            }*/
-        }
-    })
-    existingCustomerSearch.onkeyup=function(){
-       alert(searchResults[0])
-    }
-
-
-}
