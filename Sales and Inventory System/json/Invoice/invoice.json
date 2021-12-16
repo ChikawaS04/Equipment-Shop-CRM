@@ -7,7 +7,8 @@
             {
               "id": 7,             
               "date_ordered": "2021-10-18",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": true
             }
         ]
 
@@ -19,7 +20,8 @@
             {
                 "id": 4,               
                 "date_ordered": "2021-09-01",
-                "quantity": 1
+                "quantity": 1,
+                "warranty": true
               }
         ] 
     },
@@ -30,7 +32,8 @@
             {
               "id": 6,             
               "date_ordered": "2021-10-01",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": false
             }
         ]
 
@@ -42,7 +45,8 @@
             {
               "id": 3,             
               "date_ordered": "2021-09-02",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": true
             }
         ]
 
@@ -54,7 +58,8 @@
             {
               "id": 8,             
               "date_ordered": "2021-10-15",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": false
             }
         ]
 
@@ -66,7 +71,8 @@
             {
               "id": 2,             
               "date_ordered": "2021-10-05",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": true
             }
         ]
 
@@ -78,7 +84,8 @@
             {
               "id": 9,             
               "date_ordered": "2021-10-10",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": true
             }
         ]
 
@@ -90,7 +97,8 @@
             {
               "id": 5,             
               "date_ordered": "2021-10-08",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": false
             }
         ]
 
@@ -102,7 +110,8 @@
             {
               "id": 10,             
               "date_ordered": "2021-10-01",
-              "quantity": 1
+              "quantity": 1,
+              "warranty": true
             }
         ]
 
