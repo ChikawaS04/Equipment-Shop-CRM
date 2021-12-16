@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="MindTech Force">
     
-    <title>New Invoice</title>    
+    <title>Edit Invoice</title>    
     <!--<meta name="layout" content="main"/>-->
     
     <!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>-->
@@ -127,11 +127,11 @@
             <div class="row">
                 <div class="span7">
                     <header class="page-header">
-                        <h3>New Invoice</h3>
+                        <h3>Edit Invoice</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page"><a href="/pages/home.html">Home</a></li>
                             <li class="breadcrumb-item" aria-current="page"><a href="/pages/Invoice/index.html">Invoices</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">New Invoice</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Invoice</li>
                         </ol>
                     </header>
                 </div>
@@ -143,16 +143,16 @@
 
                 <div class="alert alert-block alert-info">
                     <p>
-                        Enter new customer information for this invoice as desired or search for an existing customer's information to begin.
+                        Click Edit to change this invoice's details.
                     </p>
                 </div>
                 <form id="create" ><!--action="/pages/Invoice/index.html" method="post" -->
                   <legend style="background-color: #1f3a4d ;"><a href="#" id="customerLegend" style="color: #ffffff;">Customer  ^ </a></legend>
                   <fieldset style="margin-bottom: 20px;">  
                     <div class="form-group col-md-6">
-                      <label for="new">Register New Customer</label> <input type="radio" name="customerType" id="new" value="new" style="margin-right: 40px;">
+                      <label for="new">Register New Customer</label> <input type="radio" name="customerType" id="new" value="new" style="margin-right: 40px;" disabled>
 
-                      <label for="existing">Select Existing Customer</label> <input type="radio" name="customerType" id="existing" value="existing" checked >          
+                      <label for="existing">Select Existing Customer</label> <input type="radio" name="customerType" id="existing" value="existing" checked disabled>          
                       
                     </div>   
                     

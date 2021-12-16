@@ -91,9 +91,6 @@ searchBtn.addEventListener('click',function(){
   
         }
        
-        //if(data[i].equipment[i].description.includes(invenDescSearch.value)){
-          //results+=`${data[i].equipment[i].description} \n`;
-        //}
       }
       let addLinks= document.getElementsByName("addLink");
       
@@ -109,24 +106,53 @@ searchBtn.addEventListener('click',function(){
               invenTextArea.innerHTML+= `<div id="item_id#${data[j].id}"> <select style="border: 1px solid #1f3a4d;height: auto;"  name="selectedItemsDDL">
               <option selected >${data[j].brand} ${data[j].description}</option>
               <option  disabled >Color:    ${color}</option>
-              <option disabled  >Warranty:   Yes</option>
+              <option disabled  value="${true}">Warranty:   Yes</option>
               
-              </select> <a href="#" style="color: red;"name="removeLink" id="removeLink_id#${data[j].id}">Remove</a></div>`
+              </select> <a href="#" style="color: red;"name="removeLink" id="removeLink_id#${data[j].id}">Remove</a></div>`;
               
+              document.getElementById("tblInvoiceBody").innerHTML+=`<tr>
+              <td><select id="quantity${data[j].id}">
+                <option selected disabled >Select Quantity</option>
+               </select></td>
+              <td>
+              <select style="border: 1px solid #1f3a4d;height: auto;"  name="selectedItemsDDL">
+              <option selected >${data[j].brand} ${data[j].description}</option>
+              <option  disabled >Color:    ${color}</option>
+              <option disabled  value="${true}">Warranty:   Yes</option>
+              
+              </select> </td><td>${data[j].serial}</td><td>$ ${data[j].unit_price}</td>
+              <td style="width: 100px;" id="totalAmt-${data[j].brand}">$ </td>
+            </tr>`;
             }else if (`addLink_id#${data[j].id}` == addLinks[i].id && !document.getElementById(`warranty_id#${data[j].id}`).checked ){
               let color= document.getElementById(`select_id#${data[j].id}`).value;
     
               invenTextArea.innerHTML+= `<div id="item_id#${data[j].id}"> <select style="border: 1px solid #1f3a4d;height: auto;"  name="selectedItemsDDL">
               <option selected >${data[j].brand} ${data[j].description}</option>
               <option  disabled >Color:    ${color}</option>
-              <option disabled  >Warranty:   No</option>
+              <option disabled  value="${false}">Warranty:   No</option>
               
-              </select>   <a href="#" style="color: red;"name="removeLink" id="removeLink_id#${data[j].id}">Remove</a></div>`          
+              </select>   <a href="#" style="color: red;"name="removeLink" id="removeLink_id#${data[j].id}">Remove</a></div>`;
+              
+              document.getElementById("tblInvoiceBody").innerHTML+=`<tr>
+              <td><select id="quantity${data[j].id}">
+                <option selected disabled >Select Quantity</option>
+              </select></td>
+              <td>
+              <select style="border: 1px solid #1f3a4d;height: auto;"  name="selectedItemsDDL">
+              <option selected >${data[j].brand} ${data[j].description}</option>
+              <option  disabled >Color:    ${color}</option>
+              <option disabled  value="${false}">Warranty:   No</option>
+              
+              </select> </td><td style="width: 100px;">${data[j].serial}</td><td style="width: 100px;">$ ${data[j].unit_price}</td>
+              <td style="width: 100px;" id="totalAmt-${data[j].brand}">$ </td>
+            </tr>`;
             }
           }
         })
+
    
       }
+      
       let removeLinks=document.getElementsByName("removeLink");
       for(let i=0; i<removeLinks.length;i++){
         removeLinks[i].addEventListener('click', function(){
@@ -144,6 +170,9 @@ searchBtn.addEventListener('click',function(){
   document.getElementById("invenTextarea").style.display="block";
 })
 
+document.getElementById("btnSave").addEventListener('click', function(){
+
+})
 //----------------------------------------
 radNew.onclick=function(){
   billToExistingFieldset.style.display="none";
@@ -153,7 +182,7 @@ radNew.onclick=function(){
 }
 
 radExisting.onclick=function(){
-    customerLegend.textContent="Customer  ^";
+  customerLegend.textContent="Customer  ^";
   billToExistingFieldset.style.display="block";
   billToNewFieldset.style.display="none"; 
 }
@@ -163,6 +192,30 @@ customerLegend.onmouseover=function(){
     customerLegend.style.color="skyblue";
     customerLegend.style.textDecoration="none";
 }
+customerLegend.onmouseleave=function(){
+    
+  customerLegend.style.color="#ffffff";
+}
+customerLegend.onclick=function(){
+  
+if(customerLegend.textContent=="Customer  ^" && radExisting.checked){
+  billToExistingFieldset.style.display="none";
+  
+  customerLegend.textContent="Customer  >";
+  
+}else if (customerLegend.textContent=="Customer  ^" && radNew.checked){
+  billToNewFieldset.style.display="none";
+  customerLegend.textContent="Customer  >";     
+}else if(customerLegend.textContent=="Customer  >" && radExisting.checked){
+  billToExistingFieldset.style.display="block";
+  customerLegend.textContent="Customer  ^";
+  
+}else if(customerLegend.textContent=="Customer  >" && radNew.checked){
+  billToNewFieldset.style.display="block";
+  customerLegend.textContent="Customer  ^";
+}               
+}
+
 document.getElementById('invenLegendLink').onmouseover=function(){
   document.getElementById('invenLegendLink').style.color='skyblue';
   document.getElementById('invenLegendLink').style.textDecoration='none';
@@ -200,29 +253,15 @@ document.getElementById('invenLegendLink').onclick=function(){ //Controls invent
   }
   
 }
-customerLegend.onmouseleave=function(){
-    
-    customerLegend.style.color="#ffffff";
-}
-customerLegend.onclick=function(){
-    
-  if(customerLegend.textContent=="Customer  ^" && radExisting.checked){
-    billToExistingFieldset.style.display="none";
-    
-    customerLegend.textContent="Customer  >";
-    
-  }else if (customerLegend.textContent=="Customer  ^" && radNew.checked){
-    billToNewFieldset.style.display="none";
-    customerLegend.textContent="Customer  >";     
-  }else if(customerLegend.textContent=="Customer  >" && radExisting.checked){
-    customerLegend.textContent="Customer  ^";
-    billToExistingFieldset.style.display="block";
-  }else if(customerLegend.textContent=="Customer  >" && radNew.checked){
-    billToNewFieldset.style.display="block";
-    customerLegend.textContent="Customer  ^";
-  }               
-}
+document.getElementById("btnAddNewCustomer").addEventListener("click", function(){
+  billToNewFieldset.style.display="none"; 
+  customerLegend.textContent="Customer  >" + ` ${document.getElementById("firstName").value} ${document.getElementById("lastName").value}`;
 
+  $.getJSON("/json/customer.json", function(data){
+    console.log(data);
+    
+  })
+})
 searchBtn.onclick=function(){
     equipmentResults.style.display="block";
 }
