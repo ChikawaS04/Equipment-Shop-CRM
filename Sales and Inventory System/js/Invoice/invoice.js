@@ -18,9 +18,6 @@ let existingCustomerResultsTable=document.getElementById("customerResultsTable")
 //let equipmentResults=document.getElementById("resultsTable");
 let OrderDetailsSection=document.getElementById("orderDetails");
 
-window.onload=function(){
-  alert('here');
-}
 //Events-----------------------------------
 // search field on New Invoice page
 btnSearch.addEventListener('click', function(){
@@ -259,7 +256,7 @@ document.getElementById("btnAddNewCustomer").addEventListener("click", function(
 
   $.getJSON("/json/customer.json", function(data){
     console.log(data);
-    
+
   })
 })
 searchBtn.onclick=function(){
