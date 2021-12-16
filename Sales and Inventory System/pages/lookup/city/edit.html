@@ -7,7 +7,7 @@
         <meta name="author" content="MindTech Force">
         <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>List of Colours</title>
+        <title>List of Equipment</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -56,9 +56,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/Invoice/index.html">
+                <a class="nav-link" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Invoices
+                  Orders
                 </a>
               </li>
               <li class="nav-item">
@@ -114,64 +114,70 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Colours</li>
+                <li class="breadcrumb-item"><a href="/pages/lookup/type/index.html">City</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New City</li>
               </ol>
             </nav>
-            <h1 class="h2">List of Colours</h1>
+            <h1 class="h2">New City</h1>
           </div>
 
-          <form action="https://webdevbasics.net/scripts/demo.php" method="post">
-            <div class="form-row">
-              <div class="form-group col-md-8">
-                <label for="searchtext">Search For</label>
-                <input type="text" class="form-control" id="searchtext" name="searchtext" placeholder="Colour">
+          <form action="/pages/customer/edit.html" method="">
+              <h2>City Information</h2>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="cityName">Name</label>
+                  <input type="text" class="form-control" id="cityName" name="cityName" value="Beamsville" maxlength="100" required>
+                  <small id="nameHelp" class="form-text text-muted">Name of the city should be put here.</small>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="province">Province</label>
+                  <select id="province" name="province" class="form-control" placeholder="Province" required>
+                    <option disabled></option>
+                    <option value="alberta">Alberta</option>
+                    <option value="britishColumbia">British Columbia</option>
+                    <option value="manitboa">Manitboa</option>
+                    <option value="newBrunswick">New Brunswick</option>
+                    <option value="newfoundlandAndLabrador">Newfoundland and Labrador</option>
+                    <option value="northwestTerritories">Northwest Territories</option>
+                    <option value="novaScotia">Nova Scotia</option>
+                    <option value="nunavt">Nunavt</option>
+                    <option value="ontario" selected>Ontario</option>
+                    <option value="princeEdwardIsland">Prince Edward Island</option>
+                    <option value="quebec">Quebec</option>
+                    <option value="saskatchewan">Saskatchewan</option>
+                    <option value="yukon">Yukon</option>
+                  </select>
+                  <small id="nameHelp" class="form-text text-muted">Select one of the above provinces.</small>
+                </div>
               </div>
-              <div class="form-group col-md-4">
-                <a href="create.html"><button type="button" class="btn btn-primary right">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                  New Colour</a>
-                </button>
-              </div> 
-            </div>
-            <div class="table-responsive">
-              <table class="table table-striped table-sm">
-                <thead>
-                  <tr>
-                    <th>Colour</th>
-                  </tr>
-                </thead>
-                <tbody id="equipmentBrandDataTable">
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="1">Black</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="2">Blue</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="3">Green</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="4">Grey</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="5">Indigo</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="6">Orange</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="7">Silver</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="8">Violet</td>
-                  </tr>
-                  <tr>
-                    <td class="data-link" data-href="/pages/lookup/colour/edit.html" dataid="9">Yellow</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+
+              <button type="submit" class="btn btn-primary" id="btnSave">Save</button>
+              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal">Clear</button>
           </form>
+
+          <!-- modal-->
+          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="confirmationModalLabel"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Do you wish to proceed on clearing all the values?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClearAll">Clear All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end modal-->
         </main>
       </div>
     </div>
@@ -188,14 +194,6 @@
     <script>
       feather.replace()
     </script>
-
-<script>
-  jQuery(document).ready(function($) {
-    $(".data-link").click(function() {
-        window.location = $(this).data("href");
-    });
-  });
-</script>
 
   </body>
   <!-- Footer -->
