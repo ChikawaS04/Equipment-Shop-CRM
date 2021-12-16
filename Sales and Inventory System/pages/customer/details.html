@@ -184,7 +184,7 @@
                   </div>
                   <div class="box-content">
                       <div class="btn-group-box">
-                          <button class="btn" style="width: 120px;" data-toggle="modal" data-placement="top" title="Adds New Invoice to the customer"><i class="icon-plus icon-large"></i><br/>New Invoice</button>
+                          <a href="/pages/Invoice/create.html"><button class="btn" style="width: 120px;" data-toggle="modal" data-placement="top" title="Adds New Invoice to the customer"><i class="icon-plus icon-large"></i><br/>New Invoice</button></a>
                           <button class="btn" data-toggle="modal" data-placement="top" title="Search Customer"><i class="icon-search icon-large"></i><br/>Search</button>
                           <button class="btn"><i class="icon-list-alt icon-large" data-toggle="modal" data-placement="top" title="Generate Report"></i><br/>Reports</button>
                           <button class="btn"><i class="icon-bar-chart icon-large" data-toggle="modal" data-placement="top" title="See Dashboard"></i><br/>Charts</button>
@@ -248,8 +248,8 @@
                   <div class="card">
                     <div class="card-header" id="equipmentList">
                       <h5 class="mb-0">
-                        <button id="btn-list-equipment" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-dashlane-label="true" data-form-type="other">
-                          List of Equipments
+                        <button id="btn-list-equipment" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-dashlane-label="true" data-form-type="other" style="color:#fff !important">
+                          Equipments
                         </button>
                         <button style="float:right" type="button" class="btn btn-primary" data-toggle="modal" data-target="#equipmentModal" id="btnAddEquipment" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action" data-placement="top" title="Adds Equipment to Customer's record">
                           Add Equipment
@@ -271,6 +271,50 @@
                               </tr>
                             </thead>
                             <tbody id="equipmentDetails">
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion" id="customerInvoices">
+                  <div class="card">
+                    <div class="card-header" id="invoiceList">
+                      <h5 class="mb-0">
+                        <button id="btn-list-invoice" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-dashlane-label="true" data-form-type="other" style="color:#fff !important">
+                          Invoices
+                        </button>
+                        <button style="float:right" type="button" class="btn btn-primary" data-toggle="modal" id="btnAddInvoice" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action" data-placement="top" title="Adds Invoice to Customer's record">
+                          <a href="/pages/Invoice/create.html" style="color:#fff">Add Invoice</a>
+                        </button>
+                      </h5>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse in" aria-labelledby="equipmentList" data-parent="#customerEquipmentList">
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-striped table-sm" id="invoiceDataTable">
+                            <thead>
+                              <tr>
+                                <th>Invoice Number</th>
+                                <th>Date Ordered</th>
+                                <th>Order Summary</th>
+                              </tr>
+                            </thead>
+                            <tbody id="invoiceDataTable">
+                                <!--Add HardCoded Data-->
+                                <tr>
+                                  <td class="data-link" data-toggle="modal" data-target="#equipmentModal" data-dashlane-rid="2081001e4e21294c" data-dashlane-label="true" data-form-type="action">200199</td>
+                                  <td>2021-10-18</td>
+                                  <td>Lawn Mower Govenor - Briggs and Stratton</td>
+                                </tr>
+                                <tr>
+                                  <td class="data-link">200198</td>
+                                  <td>2021-09-01</td>
+                                  <td>Lawn Mower Blade-Hydro Gear</td>
+                                </tr>
                             </tbody>
                           </table>
                         </div>

@@ -7832,11 +7832,12 @@ body > #body-container {
   border-radius: 5px;
 }
 .box .box-header {
-  color: #333333;
+  color: #fff !important;
   height: 20px;
   line-height: 20px;
   background-color: #F4F4F4;
   background-color: #f1f1f1;
+  background: #1f3a4d !important;
   background-image: -moz-linear-gradient(top, #f4f4f4, #ececec);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
   background-image: -webkit-linear-gradient(top, #f4f4f4, #ececec);
@@ -7875,7 +7876,7 @@ body > #body-container {
   display: inline-block;
   font-size: 15px;
   font-weight: 800;
-  color: #555;
+  color: #fff;
   line-height: 14px;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
@@ -11572,8 +11573,10 @@ input.radio {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
+  background: #1f3a4d !important;
   background-color: rgba(0,0,0,.03);
   border-bottom: 1px solid rgba(0,0,0,.125);
+  color: #fff !important;
 }
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
