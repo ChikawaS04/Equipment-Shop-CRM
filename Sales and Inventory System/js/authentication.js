@@ -22,9 +22,10 @@ window.addEventListener("load",function(){
           localStorage.setItem("currentRole", "SUPERVISOR");
         else if (user=="ADMIN")
           localStorage.setItem("currentRole", "ADMIN");
-        else if(user=="DANNELLA") {
+        else if(user=="DANNELLA") 
           localStorage.setItem("currentRole", "Dannella");
-        }
+        else if (user=="SECURITYADMIN")
+          localStorage.setItem("currentRole", "SECURITYADMIN");
         else 
           document.getElementById("errorMessage").innerHTML = "Invalid Username/Password";
       }
@@ -38,6 +39,15 @@ window.addEventListener("load",function(){
       $("#dataConfig").hide();
       $("#manageUsers").hide();
     }
+    else if (currentUser=="SECURITYADMIN") {
+      $("#home").hide();   
+      $("#customers").hide();
+      $("invoices").hide();
+      $("#equipments").hide();
+      $("#search").hide();
+      $("#reports").hide();
+      $("#manageUsers").show();      
+    }
     else {
       $("#dataConfig").show();
       $("#manageUsers").show();
@@ -50,7 +60,7 @@ window.addEventListener("load",function(){
 
     let user = $("#username").val().toUpperCase();
 
-    if (user=="SALES" || user=="SUPERVISOR" || user=="ADMIN" || user=="DANNELLA")
+    if (user=="SALES" || user=="SUPERVISOR" || user=="ADMIN" || user=="DANNELLA" || user=="SECURITYADMIN")
     {
       bRetVal = true;
     }
