@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/jquery/jquery-1.8.2.min.js" type="text/javascript" ></script>
-    
+7    
     <link href="/css/customize-template.css" type="text/css" media="screen, projection" rel="stylesheet" />
 
     <style>
@@ -108,8 +108,16 @@
                                 <a href="#">
                                     <i class="icon-list-alt icon-large"></i> Reports
                                 </a>
+
                             </li>
-                        </ul>
+                          
+                            <li>
+                              <a id="user_manage_text" href="/pages/user_Manage/index.html">
+                                  <img id="user_manage_icon" src="/images/user_manage.png" alt="user manage icon">
+                                  Manage User
+                              </a>
+                            </li>
+                          </ul>
                         </div>
                     </div>
                 
@@ -341,31 +349,8 @@
                             </tr>
   
                           </thead>
-                          <tbody>
-                            <tr><!--Sample value to demonstrate how it would look when an item is added to the order-->
-                              <td>
-                                <input type="text" id="quantity" placeholder="Enter Quantity" required/>                             
-                              </td>
-                              <td>
-                                Silver Honda 16551ZM0010 Governor Arm 
-                              </td>
-                              <td>
-                                8
-                              </td>
-                              <td>
-                                $ 0.00
-                              </td>
-                              <td>
-                                $ 0.00
-                              </td>
-                            </tr>
-                            <tr>
-                              <th>Subtotal</th>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <th>$ 0.00</th>
-                            </tr>
+                          <tbody id="tblInvoiceBody">
+                            
   
                           </tbody>
                           <tfoot>
@@ -378,7 +363,7 @@
                                 <td>Additional discount</td>
                                 <td>Balance Due</td>
                               </th>
-                              <th id="tblInvoiceFooter">
+                              <th >
                                 <p></p>
                                 <p>
                                   <select id="discount" name="discount" >

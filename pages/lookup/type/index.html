@@ -142,31 +142,31 @@
                 </thead>
                 <tbody id="equipmentTypeDataTable">
                   <tr>
-                    <td class="data-link" dataid="1">Belt</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="1">Belt</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Blade</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Blade</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Engine Sump</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Engine Sump</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Filter</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Filter</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Governor Arm</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Governor Arm</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Governor Gear</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Governor Gear</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Sprockets</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Sprockets</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Wheel Motor</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Wheel Motor</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Wheel Rims</td>
+                    <td class="data-link" data-href="/pages/lookup/type/edit.html" dataid="2">Wheel Rims</td>
                   </tr>
                 </tbody>
               </table>
@@ -188,6 +188,14 @@
     <script>
       feather.replace()
     </script>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".data-link").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
+</script>
 
   </body>
   <!-- Footer -->

@@ -157,12 +157,39 @@
                 <thead>
                   <tr>
                     <th>Cities</th>
+<<<<<<< Updated upstream
 
                     <th>Province</th>
+=======
+>>>>>>> Stashed changes
                   </tr>
                   
                 </thead>
                 <tbody id="equipmentBrandDataTable">
+<<<<<<< Updated upstream
+=======
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="1">Beamsville</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="2">Lincoln</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="3">Niagara Falls</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="4">Niagara-On-The-Lake</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="5">St. Catharines</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="6">Thorold</td>
+                  </tr>
+                  <tr>
+                    <td class="data-link" data-href="/pages/lookup/city/edit.html" dataid="7">Welland</td>
+                  </tr>
+>>>>>>> Stashed changes
                 </tbody>
               </table>
             </div>
@@ -186,6 +213,14 @@
     <script>
       feather.replace()
     </script>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".data-link").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
+</script>
 
   </body>
   <!-- Footer -->
