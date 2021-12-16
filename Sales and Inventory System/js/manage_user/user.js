@@ -2,7 +2,7 @@
 
 if(window.location.href == "http://127.0.0.1:5502/pages/user_Manage/edit.html")
 {
-    document.getElementById("firstName").value = "Dannella@gmail.com";
+    document.getElementById("firstName").value = "Dannella";
 
     document.getElementById("middleName").value = "";
 
