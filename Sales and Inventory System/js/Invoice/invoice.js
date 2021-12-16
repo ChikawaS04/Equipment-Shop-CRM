@@ -253,7 +253,7 @@ document.getElementById('invenLegendLink').onclick=function(){ //Controls invent
 document.getElementById("btnAddNewCustomer").addEventListener("click", function(){
   billToNewFieldset.style.display="none"; 
   customerLegend.textContent="Customer  >" + ` ${document.getElementById("firstName").value} ${document.getElementById("lastName").value}`;
-
+  window.location.href="/pages/Invoice/index.html";
   $.getJSON("/json/customer.json", function(data){
     console.log(data);
 

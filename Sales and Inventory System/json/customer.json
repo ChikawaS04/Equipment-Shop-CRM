@@ -244,5 +244,20 @@
       "Date_Checkout": "2021-10-06"
     }
   ]
+},
+{
+  "id": 11,
+  "firstName": "Olivia",
+  "middleName": "",
+  "lastName": "Rathod",
+  "email": "olivia@gmail.com",
+  "phone": "217-588-6173",
+  "address": "65 Villy St",
+  "province": "Ontario",
+  "city": "Brampton",
+  "postalCode": "L8B 51P",
+  "equipment":[
+    
+  ]
 }
 ]
