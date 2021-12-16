@@ -142,27 +142,56 @@
             <div class="container">
 
                 
-                <form action="/pages/customer/edit.html" method="post" id="create">
+                <form action="/pages/user_Manage/" method="post" id="create">
                     <legend>User Role Information</legend><br>
                     <div class="group-info">
                         
             
                           <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required />
+                              </div>
+                              <div class="form-group col-md-3">
+                                  <label for="middleName">Middle Name</label>
+                                  <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
+                              
+                                </div>
+                              
+                              <div class="form-group col-md-4">
+                                  <label for="lastName">Last Name <span class="required">*</span></label>
+                                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required />
+                              </div>
+                              <div  class="form-group col-md-3" id="userbx">
+                                <label for="username">UserName <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="UserName" maxlength="50" required />
+                              </div>
+                              <div class="form-group col-md-4" id="emailbx">
                                 <label for="email">Email address <span class="required">*</span></label>
                                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required />
                                 <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                           
-                            </div>
-                           
-                            <label for="usertype"> <span class="required">Roles *</span></label>
-                            <input type="checkbox" id="admin" name="admin" value="Admin">
+                                </div>
                             
+                            
+                            <label id="rolelb" for="usertype"> <span class="required">Roles *</span></label>
+                            
+                            <div id="adminch">
                             <label for="admin"> Admin</label>
-                            <input type="checkbox" id="supervisor" name="supervisor" value="Supervisor">
+                            <input type="checkbox" id="admin" name="admin" value="Admin">
+                            </div>
+                            <div id="superch">
                             <label for="supervisor">Supervisor</label>
-                            <input type="checkbox" id="salesRepresentative" name="salesRepresentative" value="SalesRepresentative">
+                            <input type="checkbox" id="supervisor" name="supervisor" value="Supervisor">
+                            </div>
+                            
+                            <div id="salech">
                             <label for="salesRepresentative">Sales Representative</label>
+                            <input type="checkbox" id="salesRepresentative" name="salesRepresentative" value="SalesRepresentative">
+                            </div>
+                            
+                            </div>
+                            
+                               
                                 
                             
                           

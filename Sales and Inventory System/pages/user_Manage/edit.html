@@ -147,26 +147,51 @@
                     <div class="group-info">
                         
             
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="email">Email address <span class="required">*</span></label>
-                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required />
-                                <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                           
+                        <div class="form-row">
+                          <div class="form-group col-md-4">
+                              <label for="firstName">First Name <span class="required">*</span></label>
+                              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required />
                             </div>
-                           
-                            <label for="usertype"> <span class="required">Roles *</span></label>
-                            <input type="checkbox" id="admin" name="admin" value="Admin">
+                            <div class="form-group col-md-3">
+                                <label for="middleName">Middle Name</label>
+                                <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
                             
-                            <label for="admin"> Admin</label>
-                            <input type="checkbox" id="supervisor" name="supervisor" value="Supervisor">
-                            <label for="supervisor">Supervisor</label>
-                            <input type="checkbox" id="salesRepresentative" name="salesRepresentative" value="SalesRepresentative">
-                            <label for="salesRepresentative">Sales Representative</label>
-                                
+                              </div>
                             
+                            <div class="form-group col-md-4">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required />
+                            </div>
+                            <div  class="form-group col-md-3" id="userbx">
+                              <label for="username">UserName <span class="required">*</span></label>
+                              <input type="text" class="form-control" id="username" name="username" placeholder="UserName" maxlength="50" required />
+                            </div>
+                            <div class="form-group col-md-4" id="emailbx">
+                              <label for="email">Email address <span class="required">*</span></label>
+                              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required />
+                              <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                              </div>
                           
-                        <div >
+                          
+                          <label id="rolelb" for="usertype"> <span class="required">Roles *</span></label>
+                          
+                          <div id="adminch">
+                          <label for="admin"> Admin</label>
+                          <input type="checkbox" id="admin" name="admin" value="Admin">
+                          </div>
+                          <div id="superch">
+                          <label for="supervisor">Supervisor</label>
+                          <input type="checkbox" id="supervisor" name="supervisor" value="Supervisor">
+                          </div>
+                          
+                          <div id="salech">
+                          <label for="salesRepresentative">Sales Representative</label>
+                          <input type="checkbox" id="salesRepresentative" name="salesRepresentative" value="SalesRepresentative">
+                          </div>
+                          
+                          </div>
+                          
+                            <div class="group-button">
                             <button type="button" onclick="alert('User Details has been successfully saved')
                             location.replace('/pages/user_Manage/index.html')" class="btn btn-primary" id="btnSave" >Save</button>
                             <button type="button" onclick="
@@ -176,6 +201,7 @@
                             document.getElementById('supervisor').checked = false;
                             document.getElementById('salesRepresentative').checked = false;
                             ">Clear</button> 
+                            </div>
                         </div>
                     </div>
                 </form>
