@@ -8,7 +8,7 @@ if(window.location.href == "http://127.0.0.1:5502/pages/user_Manage/edit.html")
 
     document.getElementById("lastName").value = "ortans";
 
-    document.getElementById("username").value = "dortans25";
+    document.getElementById("username").value = "Dannella";
 
     document.getElementById("email").value = "Dannella@gmail.com";
 
