@@ -5,48 +5,13 @@ let radExisting=document.getElementById("existing");
 let radNew=document.getElementById("new");
 let searchBtn=document.getElementById("btnEquipmentOrder");
 let existingCustomerSearch=document.getElementById("searchBox");
-let btnSearch= document.getElementById("btnSearch");
 let existingCustomerResultsTable=document.getElementById("customerResultsTable");
 let equipmentResults=document.getElementById("resultsTable");
-let InvenDetailsSection=document.getElementById("invenDetails");
 let OrderDetailsSection=document.getElementById("orderDetails");
-let btnConfirmExistingCustomer= document.getElementById("btnConfirmExistingCustomer");
 
 //Events-----------------------------------
-// search field on New Invoice page
-btnSearch.addEventListener('click', function(){
-  let searchResults='';
-  $.getJSON('/json/customer.json',function(data){
-      console.log(data);
-      for( let i=0; i<data.length; i++){
-        
-        if(data[i].firstName.includes(existingCustomerSearch.value)){
-          
-          searchResults+=`<tr>
-          <td><input type="radio" name="radSearchResults" id= "${data[i].id}" value="${data[i].firstName}""> ${data[i].firstName +" "+ data[i].lastName}</td>
-          <td>${data[i].email}</td>
-          <td>${data[i].address}, ${data[i].city}, ${data[i].province}</td>
-          <td>${data[i].phone}</td>
-          </tr>`;
-        }
-         
-      }
-    existingCustomerResultsTable.innerHTML=searchResults;
-
-    let radOptions= document.getElementsByName("radSearchResults");
-    for(let i=0; i<radOptions.length;i++){
-      radOptions[i].addEventListener('click',function(){
-        customerLegend.textContent="Customer  >"+" "+radOptions[i].value;
-        billToExistingFieldset.style.display="none";
-        InvenDetailsSection.style.display='block';
-        OrderDetailsSection.style.display='none';
-      })
-    }
-  })
-
-})
-
-
+//Dynamic search field on New Invoice page
+existingCustomerSearch.onselect=search();
 //----------------------------------------
 radNew.onclick=function(){
   billToExistingFieldset.style.display="none";
@@ -79,10 +44,10 @@ customerLegend.onclick=function(){
   }else if (customerLegend.textContent=="Customer  ^" && radNew.checked){
     billToNewFieldset.style.display="none";
     customerLegend.textContent="Customer  >";     
-  }else if(customerLegend.textContent.includes("Customer  >") && radExisting.checked){
+  }else if(customerLegend.textContent=="Customer  >" && radExisting.checked){
     customerLegend.textContent="Customer  ^";
     billToExistingFieldset.style.display="block";
-  }else if(customerLegend.textContent.includes("Customer  >") && radNew.checked){
+  }else if(customerLegend.textContent=="Customer  >" && radNew.checked){
     billToNewFieldset.style.display="block";
     customerLegend.textContent="Customer  ^";
   }               
@@ -93,3 +58,30 @@ searchBtn.onclick=function(){
 }
 //------------------------------------------------
 //Functions--------------------------------------
+function search(){
+    let searchResults=[];
+    $.getJSON("/json/customer.json",function(data){
+        console.log(data);
+        for( let i=0; i<data.length; i++){
+            if( existingCustomerSearch.innerHTML!="" && (data[i].firstName.includes(existingCustomerSearch.innerHTML) || data[i].phone.includes(existingCustomerSearch.innerHTML))){
+                searchResults.push(`<tr>
+                    <td>${data[i].firstName +" "+ data[i].lastName}</td>
+                    <td>${data[i].email}</td>
+                    <td>${data[i].address}, ${data[i].city},\n ${data[i].province}</td>
+                    <td>${data[i].phone}</td>
+                </tr>`)
+            }
+           
+            /*if( existingCustomerSearch.innerHTML!="" && (data[i].firstName +" "+ data[i].lastName || data[i].phone).includes(existingCustomerSearch.innerHTML) ){
+               
+            }else{
+
+            }*/
+        }
+    })
+    existingCustomerSearch.onkeyup=function(){
+       alert(searchResults[0])
+    }
+
+
+}
