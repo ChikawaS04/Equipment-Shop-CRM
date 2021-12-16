@@ -60,7 +60,7 @@
                                         <a href="/pages/lookup/colour/index.html">Colour</a>
                                     </li>
                                 </ul>
-                              </li>
+                            </li>
                             
                         </ul>
                         <ul class="nav pull-right">
@@ -109,14 +109,14 @@
                                     <a href="#">
                                         <i class="icon-list-alt icon-large"></i> Reports
                                     </a>
-                                </li>
-                                <li>
+                                </li><li>
                                     <a id="user_manage_text" href="/pages/user_Manage/index.html">
                                         <img id="user_manage_icon" src="/images/user_manage.png" alt="user manage icon">
                                         Manage User
                                     </a>
                                     
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -127,11 +127,11 @@
             <div class="row">
                 <div class="span7">
                     <header class="page-header">
-                        <h3>Edit Customer</h3>
+                        <h3>Create User</h3>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item" aria-current="page"><a href="/pages/home.html">Home</a></li>
-                            <li class="breadcrumb-item" aria-current="page"><a href="/pages/customer/index.html">Customer</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">New Customer</li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="/pages/user_Manage/index.html">Manage User</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">New User</li>
                         </ol>
                     </header>
                 </div>
@@ -141,98 +141,76 @@
     <section class="page container">
             <div class="container">
 
-                <div class="alert alert-block alert-info">
-                    <p>
-                        Enter customer information for this account as desired.  Fields marked with an asterisk
-                        are required.
-                    </p>
-                </div>
-                <form action="/pages/customer/edit.html" method="post" id="create">
-                    <legend><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#customerInfo"><i class="icon-minus icon-small"></i> Customer Information</button></legend><br>
-                    <div class="collapse in" id="customerInfo" >
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label for="firstName">First Name <span class="required">*</span></label>
-                              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required />
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="middleName">Middle Name</label>
-                                <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="lastName">Last Name <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required />
-                            </div>
-                          </div>
+                
+                <form action="/pages/user_Manage/" method="post" id="create">
+                    <legend>User Role Information</legend><br>
+                    <div class="group-info">
+                        
             
                           <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required />
+                              </div>
+                              <div class="form-group col-md-3">
+                                  <label for="middleName">Middle Name</label>
+                                  <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
+                              
+                                </div>
+                              
+                              <div class="form-group col-md-4">
+                                  <label for="lastName">Last Name <span class="required">*</span></label>
+                                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required />
+                              </div>
+                              <div  class="form-group col-md-3" id="userbx">
+                                <label for="username">UserName <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="UserName" maxlength="50" required />
+                              </div>
+                              <div class="form-group col-md-4" id="emailbx">
                                 <label for="email">Email address <span class="required">*</span></label>
                                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required />
                                 <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
+                                </div>
+                            
+                            
+                            <label id="rolelb" for="usertype"> <span class="required">Roles *</span></label>
+                            
+                            <div id="adminch">
+                            <label for="admin"> Admin</label>
+                            <input type="checkbox" id="admin" name="admin" value="Admin">
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-                                <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+                            <div id="superch">
+                            <label for="supervisor">Supervisor</label>
+                            <input type="checkbox" id="supervisor" name="supervisor" value="Supervisor">
                             </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="address">Address <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150">
-                                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
+                            
+                            <div id="salech">
+                            <label for="salesRepresentative">Sales Representative</label>
+                            <input type="checkbox" id="salesRepresentative" name="salesRepresentative" value="SalesRepresentative">
                             </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-4">
-                              <label for="province">Province <span class="required">*</span></label>
-                              <select id="province" name="province" class="form-control" placeholder="Province">
-                                <option disabled selected></option>
-                              </select>
+                            
                             </div>
-                            <div class="form-group col-md-4">
-                              <label for="city">City <span class="required">*</span></label>
-                              <select id="city" name="city" class="form-control" placeholder="City">
-                                <option disabled selected></option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md-3">
-                              <label for="postalCode">Postal Code <span class="required">*</span></label>
-                              <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" required />
-                              <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx <br>(i.e. L0S 1J0)</small>
-                            </div>
-                        </div>
+                            
+                               
+                                
+                            
+                          
                         <div class="group-button">
-                            <button type="submit" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Adds New Customer to the record">Save</button>
-                            <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" data-placement="top" title="This clears all fields" >Clear</button>
+                            <button type="submit"  onclick="alert('User Details has been Saved')
+                            location.replace('/pages/user_Manage/index.html')" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Adds New Customer to the record">Save</button>
+                            <button type="button" onclick="
+                            
+                            document.getElementById('email').value = '';
+                            document.getElementById('admin').checked = false;
+                            document.getElementById('supervisor').checked = false;
+                            document.getElementById('salesRepresentative').checked = false;
+                        ">Clear</button> 
                         </div>
                     </div>
                 </form>
 
                 <!-- modal-->
-                <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="confirmationModalLabel"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                        <div class="modal-body">
-                        <p>
-                            Do you wish to proceed on clearing all the values?
-                        </p>
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClearAll">Clear All</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <!-- end modal-->
+                
 
             </div>
     </section>
@@ -255,5 +233,6 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="/js/manage_user/user.js"></script>
     </body>
 </html>

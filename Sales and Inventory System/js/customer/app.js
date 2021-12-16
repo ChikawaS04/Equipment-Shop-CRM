@@ -62,6 +62,17 @@ window.addEventListener("load",function(){
       globalSearch:true
   });
 
+  $("#invoiceDataTable").fancyTable({
+    /* Column number for initial sorting*/
+      sortColumn:0,
+      /* Setting pagination or enabling */
+      pagination: true,
+      /* Rows per page kept for display */
+      perPage:8,
+      globalSearch:true
+  });
+
+
   setTimeout(function(){ 
     $(".data-link").click(function(){ //This enables the clicking on the customer data to link to its details
       localStorage.setItem("currentEquipment", $(this).attr("dataid"));
