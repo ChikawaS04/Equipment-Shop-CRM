@@ -12,6 +12,7 @@
         <script src="../js/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
         <link href="../../css/customize-template.css" type="text/css" media="screen, projection" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="../css/mj_style.css" type="text/css" rel="stylesheet" />
         <style>
             #body-content {
                 padding-top: 40px;
@@ -39,7 +40,7 @@
                         <i class="icon-globe">Robotic Lawn Mowers</i>
                     </a>
                     <div id="app-nav-top-bar" class="nav-collapse">
-                        <ul class="nav">
+                        <ul class="nav" id="dataConfig">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Configuration <b class="caret hidden-phone"></b>
                                 </a>
@@ -81,27 +82,41 @@
                         <ul>
                             <li>
                                 <a href="/pages/home.html">
-                                    <i class="icon-home icon-large"></i> Home </a>
+                                    <i class="icon-home icon-large"></i> Home
+                                </a>
                             </li>
                             <li>
                                 <a href="/pages/customer/index.html">
-                                    <i class="icon-user icon-large"></i> Customers </a>
+                                    <i class="icon-user icon-large"></i> Customers
+                                </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-shopping-cart icon-large"></i> Equipments </a>
+                                    <i class="icon-shopping-cart icon-large"></i> Equipments
+                                </a>
                             </li>
                             <li>
                                 <a href="/pages/Invoice/index.html">
-                                    <i class="icon-file icon-large"></i> Invoices </a>
+                                    <i class="icon-file icon-large"></i> Invoices
+                                </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-search icon-large"></i> Search </a>
+                                    <i class="icon-search icon-large"></i> Search
+                                </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <i class="icon-list-alt icon-large"></i> Reports </a>
+                                <a href="/pages/Report/index.html">
+                                    <i class="icon-list-alt icon-large"></i> Reports
+                                </a>
+                            </li>
+                            <li id="manageUsers" style="display: none;">
+                                <a id="user_manage_text" href="/pages/user_Manage/index.html">
+                                    <!--<img id="user_manage_icon" src="/images/user_manage.png" alt="user manage icon">-->
+                                    <i class="icon-key icon-large"></i>
+                                    Manage User
+                                </a>
+                                
                             </li>
                         </ul>
                     </div>
@@ -111,13 +126,29 @@
                         <div class="row">
                             <div class="span7">
                                 <header class="page-header">
-                                    <h3>Party Planning Sales Reports</h3>
+                                    <h3>Reports</h3>
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item" aria-current="page"><a href="/pages/home.html">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Report</li>
+                                    </ol>
                                 </header>
                             </div>
                         </div>
                     </div>
                 </section>
+                <!--<section class="nav nav-page">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span7">
+                                <header class="page-header">
+                                    <h3>Party Planning Sales Reports</h3>
+                                </header>
+                            </div>
+                        </div>
+                    </div>
+                </section>0-->
                 <section class="page container">
+                    <legend>Party Planning Sales Reports</legend><br>
                     <div class="row"></div>
                     <div class="row">
                         <div class="span16">
@@ -319,5 +350,6 @@
                     }, margins);
             }
         </script>
+        <script src="/js/authentication.js" type="text/javascript" ></script>
     </body>
 </html>
