@@ -142,25 +142,25 @@
                 </thead>
                 <tbody id="equipmentBrandDataTable">
                   <tr>
-                    <td class="data-link" dataid="1">Briggs and Stratton</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="1">Briggs and Stratton</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="2">Honda</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="2">Honda</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="3">Honda</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="3">Honda</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="4">Husqvarna</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="4">Husqvarna</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="5">Hydro-Gear</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="5">Hydro-Gear</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="6">Snapper</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="6">Snapper</td>
                   </tr>
                   <tr>
-                    <td class="data-link" dataid="7">Universal</td>
+                    <td class="data-link" data-href="/pages/lookup/brand/edit.html" dataid="7">Universal</td>
                   </tr>
                 </tbody>
               </table>
@@ -182,6 +182,14 @@
     <script>
       feather.replace()
     </script>
+
+<script>
+  jQuery(document).ready(function($) {
+    $(".data-link").click(function() {
+        window.location = $(this).data("href");
+    });
+  });
+</script>
 
   </body>
   <!-- Footer -->
