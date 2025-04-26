@@ -1,0 +1,24 @@
+[
+    {
+        "warranty_ID": 1,
+        "product_ID": 101,
+        "customer_ID": 201,
+        "purchase_Date": "2023-01-15",
+        "warranty_StartDate": "2023-01-15",
+        "warranty_EndDate": "2024-01-15",
+        "warranty_Type": "Standard",
+        "coverage_Details": "1-year limited warranty covering manufacturing defects",
+        "warranty_Status": "Active"
+    },
+    {
+        "warranty_ID": 2,
+        "product_ID": 102,
+        "customer_ID": 202,
+        "purchase_Date": "2023-02-20",
+        "warranty_StartDate": "2023-02-20",
+        "warranty_EndDate": "2025-02-20",
+        "warranty_Type": "Extended",
+        "coverage_Details": "3-year extended warranty with comprehensive coverage",
+        "warranty_Status": "Active"
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "email": "admin@outlook.com",
+        "password": "pass",
+        "role": "admin"
+    },
+    {
+        "email": "technician@outlook.com",
+        "password": "pass",
+        "role": "technician"
+    },
+    {
+        "email": "sales@outlook.com",
+        "password": "pass",
+        "role": "sales"
+    }
+]

@@ -1,243 +1,490 @@
 <!DOCTYPE html>
 <html lang="en" class="js-focus-visible" data-js-focus-visible="">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="MindTech Force">
-        <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <title>Create Customer</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="IT SMART">
+  <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
 
-        <!-- Bootstrap core CSS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <!-- Custom styles for this template -->
-        <link href="/css/style.css" rel="stylesheet">
+  <title>View Customer</title>
 
-    </head>
+  <!-- Bootstrap core CSS -->
+  <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
-    <nav class="navbar navbar-dark sticky-top bg-green flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">MindTech Force</a>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
-        </li>
-      </ul>
-    </nav>
-    <span class="navbar-text">Test</span>
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/customer/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                  Customers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/equipment/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  Equipments
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/product/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  Products
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/Invoice/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                  Invoices
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                  Reports
-                </a>
-              </li>
-            </ul>
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Maintain Lookup Values</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet">
+
+  <!-- Need to load jquery firsrt for the modal to use the script-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+  <style>
+    /* Initially hide the list of pages */
+    .lookupPages {
+      display: none;
+    }
+  </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
+  <nav class="navbar navbar-dark sticky-top bg-green flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IT SMART</a>
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a id="dashboardLink" class="nav-link active" href="/pages/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-home">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Dashboard <span class="sr-only">(current)</span>
               </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/lookup/type/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  Equipment Type
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/lookup/brand/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  Equipment Brand
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/lookup/province/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  Province
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/lookup/city/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  City
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pages/lookup/colour/index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                  Colour
-                </a>
-              </li>
-            </ul>
-            <img src="/images/mindtech-force-logo.png" alt="MindTech">
-          </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/customer/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-users">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Customers
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/equipment/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-shopping-cart">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Equipments
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="repairLink" class="nav-link" href="/pages/repair/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-tool">
+                  <path
+                    d="M2 8h4V3c0-1.1.9-2 2-2s2 .9 2 2v5h4a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-10a3 3 0 0 1 3-3zm10 11V8">
+                  </path>
+                  <circle cx="19" cy="13" r="2"></circle>
+                </svg>
+                Repair
+              </a>
+            </li>
+          </ul>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Maintain Lookup Values</span>
+            <a class="d-flex align-items-center text-muted toggleLookupPages" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-plus-circle">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </a>
+          </h6>
+          <ul class="nav flex-column mb-2 lookupPages">
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/type/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Equipment Type
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/brand/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Equipment Brand
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/province/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Province
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/city/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                City
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/colour/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Colour
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/warranty/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Warranty
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/lookup/worklog/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                worklog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a id="worklogLink" class="nav-link" href="/pages/lookup/reports/demo.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                warranty Report
+              </a>
+            </li>
+
+            </li>
+            <li class="nav-item">
+              <a id="reportLink" class="nav-link" href="/pages/lookup/repairreport/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Repair Report
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a id="reportLink" class="nav-link" href="/pages/lookup/CEReport/index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-file-text">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                Customer Detail Report
+              </a>
+            </li>
+
+          </ul>
+        </div>
+    </div>
+    </nav>
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="chartjs-size-monitor"
+        style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+        <div class="chartjs-size-monitor-expand"
+          style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+          <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+        </div>
+        <div class="chartjs-size-monitor-shrink"
+          style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+          <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
+            <li class="breadcrumb-item active" aria-current="page">View Customer</li>
+          </ol>
         </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="/pages/customer/index.html">Customer</a></li>
-                <li class="breadcrumb-item active" aria-current="page" styl>New Customer</li>
-              </ol>
-              <small id="functionHelp" class="form-text text-muted" style="font-weight:800; color:#61B15A !important">Shortcut Keys: Press F2 to SAVE and F4 to CLEAR all fields</small>
-            </nav>
-            <h1 class="h2">New Customer</h1>
-            
-          </div>
-
-          <form action="/pages/customer/edit.html" method="post" id="create">
-              <h2>Customer Information</h2>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" maxlength="50" required>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="middleName">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Middle Name" maxlength="50">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" maxlength="50" required>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email" maxlength="150" required>
-                    <small id="emailHelp" class="form-text text-muted">Email address format should be youremail@domain.com</small>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-                    <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Address" aria-describedby="addressHelp" maxlength="150">
-                <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building Name</small>
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <label for="province">Province</label>
-                  <select id="province" name="province" class="form-control" placeholder="Province">
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="city">City</label>
-                  <select id="city" name="city" class="form-control" placeholder="City">
-                    <option disabled selected></option>
-                  </select>
-                </div>
-                <div class="form-group col-md-2">
-                  <label for="postalCode">Postal Code</label>
-                  <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code" aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" required>
-                  <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx (i.e. L0S 1J0)</small>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" id="btnSave" data-toggle="modal" data-placement="top" title="Adds New Customer to the record" >Save</button>
-              <button id="btnClear" type="submit" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#confirmationModal" data-placement="top" title="This clears all fields" >Clear</button>
-          </form>
-
-          <!-- modal-->
-          <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="confirmationModalLabel"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>
-                    Do you wish to proceed on clearing all the values?
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnClearAll">Clear All</button>
-                </div>
-              </div>
+      </div>
+      <form action="/pages/customer/index.html" id="btnEdit">
+        <h2>Customer Information</h2>
+        <div class="group-info">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"
+                maxlength="50" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name"
+                maxlength="50" required>
             </div>
           </div>
-          <!-- end modal-->
-        </main>
-      </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                placeholder="Email" maxlength="150">
+              <small id="emailHelp" class="form-text text-muted">Email address format should be
+                youremail@domain.com</small>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="phone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="telHelp"
+                placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              <small id="telHelp" class="form-text text-muted">Please note the format should be xxx-xxx-xxxx</small>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Address"
+              aria-describedby="addressHelp" maxlength="150">
+            <small id="addressHelp" class="form-text text-muted">Address format House Number, Street Name / Building
+              Name</small>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="province">Province</label>
+              <select id="province" name="province" class="form-control">
+                <option selected>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="province">Province</label>
+              <select id="province" name="province" class="form-control">
+                <option selected>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="city">City</label>
+              <select id="city" name="city" class="form-control">
+                <option selected>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="City">City</label>
+              <select id="City" name="City" class="form-control">
+                <option selected>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="postalCode">Postal Code</label>
+              <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code"
+                aria-describedby="postalHelp" pattern="[A-Za-z0-9]{3} [A-Za-z0-9]{3}" required>
+              <small id="postalHelp" class="form-text text-muted">Postal Code format should be xxx xxx (i.e.
+                L2G 1Y1)</small>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="btnEdit" data-toggle="modal" data-placement="top"
+            title="Edits selected Customer record">Create</button>
+          <button id="fillFieldsButton">Fill Form</button>
+      </form>
+      <form action="/pages/equipment/create.html" id="equipment">
+        <div style="margin-top: 20px;">
+          <button type="submit" onclick="transferDataAndSubmit()" class="btn btn-primary" data-toggle="modal"
+            data-placement="top" title="Edits selected Customer record">Add Equipment</button>
+        </div>
+      </form>
+  </div>
+
+  </div>
+  </div>
+  </form>
+
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var fillFieldsButton = document.getElementById('fillFieldsButton');
+      var fillRecordsButton = document.getElementById('fillRecordsButton');
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    
-    <!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
-    <script src="/js/app.js"></script>
-    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
-    <!-- Icons -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    
-    <script>
-      $(document).ready(function(){
-        feather.replace();
-        $('[data-toggle="tooltip"]').tooltip();   
+      // Function to fill the form fields with dummy data
+      function fillFormFields() {
+        var dummyData = {
+          'firstName': 'John',
+          'middleName': 'Doe',
+          'lastName': 'Doe',
+          'email': 'smitpatel2403@gmail.com',
+          'phone': '437-555-1234',
+          'address': '6697 Spence Street',
+          'province': 'Ontario',
+          'city': 'Niagara Falls',
+          'postalCode': 'L2G 1Y1'
+          // Add more fields as needed
+        };
+
+        // Loop through the dummy data and fill the corresponding form fields
+        Object.keys(dummyData).forEach(fieldName => {
+          var fieldElement = document.getElementById(fieldName);
+
+          // Check if the element with the given ID exists
+          if (fieldElement) {
+            // Fill the form field with dummy data
+            fieldElement.value = dummyData[fieldName];
+          }
+        });
+      }
+
+      // Event listener for the "Fill Form" button click
+      fillFieldsButton.addEventListener('click', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        fillFormFields();
       });
-    </script>
-  </body>
 
-  <!-- Footer -->
-  <footer class="page-footer font-small blue pt-4">
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy;2021 Copyrights by
-      <a href="#"> MindTech Force</a>. All Rights Reserved.
-    </div>
-    <!-- Copyright -->
-  </footer>
+      // Event listener for the "Fill Records" button click
+      fillRecordsButton.addEventListener('click', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Display the dummy records (optional, depending on your requirements)
+        var recordsContainer = document.getElementById('recordsContainer');
+        if (recordsContainer) {
+          var recordElement = document.createElement('div');
+          recordElement.textContent = JSON.stringify(dummyData);
+          recordsContainer.innerHTML = '';
+          recordsContainer.appendChild(recordElement);
+        }
+      });
+
+      // Automatically fill the form fields when the page loads
+      fillFormFields();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      feather.replace(); // Initialize Feather icons
+
+      // Add a click event listener to all elements with the class "toggleLookupPages"
+      var toggleLookupPagesElements = document.querySelectorAll('.toggleLookupPages');
+      toggleLookupPagesElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+          // Toggle the visibility of the associated pages
+          var lookupPages = document.querySelector('.lookupPages');
+          lookupPages.style.display = (lookupPages.style.display === 'none' || lookupPages.style.display === '') ? 'block' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <script>
+    function transferDataAndSubmit() {
+      // Get customer data
+      const firstName = document.getElementById('firstName').value;
+      const middleName = document.getElementById('middleName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      // Create a data object
+      const data = {
+        firstName: firstName,
+        middleName: middleName,
+        lastName: lastName,
+        email: email,
+        phone: phone
+        // Add more customer fields as needed
+      };
+
+      // Convert the data object to a JSON string
+      const jsonData = JSON.stringify(data);
+
+      // Store the JSON string in localStorage or sessionStorage
+      localStorage.setItem('customerData', jsonData);
+
+      console.log('Data transferred:', jsonData); // Add this line for debugging
+
+      // Continue with the normal form submission
+      window.location.href = '/pages/equipment/create.html';
+    }
+  </script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    feather.replace()
+  </script>
+</body>
+
 </html>

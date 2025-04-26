@@ -1,0 +1,35 @@
+[
+    {
+        "Repair_ID": "LM001",
+        "Start_Date": "2023-11-10",
+        "Start_Time": "08:00:00",
+        "End_Date": "2023-11-10",
+        "End_Time": "12:00:00",
+        "DescriptionOf_WorkDone": "Replaced damaged blades and performed oil change.",
+        "Status": "Active",
+        "Technician_ID": "T001",
+        "Technician_Name": "John Smith"
+    },
+    {
+        "Repair_ID": "LM002",
+        "Start_Date": "2023-11-12",
+        "Start_Time": "10:30:00",
+        "End_Date": "2023-11-12",
+        "End_Time": "14:45:00",
+        "DescriptionOf_WorkDone": "Fixed issues with the engine and adjusted cutting height.",
+        "Status": "Active",
+        "Technician_ID": "T002",
+        "Technician_Name": "Alice Johnson"
+    },
+    {
+        "Repair_ID": "LM003",
+        "Start_Date": "2023-11-15",
+        "Start_Time": "13:15:00",
+        "End_Date": "2023-11-15",
+        "End_Time": "16:30:00",
+        "DescriptionOf_WorkDone": "Performed routine maintenance, cleaned carburetor, and replaced spark plug.",
+        "Status": "Active",
+        "Technician_ID": "T003",
+        "Technician_Name": "Bob Williams"
+    }
+]

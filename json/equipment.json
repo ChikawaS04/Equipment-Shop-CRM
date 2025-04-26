@@ -1,0 +1,29 @@
+[
+    {
+        "Customer_ID": "001",
+        "Equipment_Name": "Chainsaw",
+        "Model_Name": "Electric 20",
+        "Vin_Serial_No": "GHI-456-9789",
+        "Description": "Blade replacement and tune-up",
+        "Company_Name": "Timber Tech",
+        "Type_Equipment": "Outdoor"
+    },
+    {
+        "Customer_ID": "002",
+        "Equipment_Name": "Tractor",
+        "Model_Name": "PQR Diesel",
+        "Vin_Serial_No": "JKL-789-3012",
+        "Description": "Transmission repair",
+        "Company_Name": "Agro Machinery",
+        "Type_Equipment": "Farming"
+    },
+    {
+        "Customer_ID": "003",
+        "Equipment_Name": "Pressure Washer",
+        "Model_Name": "Blazzer 2X",
+        "Vin_Serial_No": "MNO-298-7654",
+        "Description": "Cleaning system maintenance",
+        "Company_Name": "Power Clean Tech",
+        "Type_Equipment": "Industrial"
+    }
+]

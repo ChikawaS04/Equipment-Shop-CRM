@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="js-focus-visible" data-js-focus-visible="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="IT SMART">
+    <link rel="icon" href="/bootstrap/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>View Customer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Need to load jquery firsrt for the modal to use the script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
+
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="chartjs-size-monitor"
+            style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+            <div class="chartjs-size-monitor-expand"
+                style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+            </div>
+            <div class="chartjs-size-monitor-shrink"
+                style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Sign In</li>
+                </ol>
+            </nav>
+        </div>
+
+        <form action="/pages/index.html" id="customerEditForm">
+            <h2>Login Information</h2>
+            <div class="group-info">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                            placeholder="Email" maxlength="150">
+                        <small id="emailHelp" class="form-text text-muted">Email address format should be
+                            youremail@domain.com</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <small id="passwordHelp" class="form-text text-muted">Password format should be
+                            : Smit@0203</small>
+                    </div>
+                </div>
+                <button onclick="login()" type="submit" class="btn btn-primary" id="btnSubmit" data-toggle="modal"
+                    data-placement="top" title="Edits selected Customer record">Sign
+                    In</button>
+            </div>
+            </div>
+            </div>
+            </div>
+        </form>
+
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            // Your $.ajax code here
+
+            function login() {
+
+                $.ajax({
+                    url: '../../json/login.json',
+                    dataType: 'json',
+                    success: function (data) {
+
+                        for (var i = 0; i < data.length; i++) {
+                            if ((data[i].email == document.getElementById("email").value) && (data[i].password == document.getElementById("password").value)) {
+                                sessionStorage.setItem("role", data[i].role);
+                                if (data[i].role == "admin") {
+                                    window.location.href = "../index.html";
+                                }
+                                else {
+                                    window.location.href = "../indexTech.html";
+                                }
+
+                                break;
+
+
+                            }
+                        }
+
+
+
+                        for (var i = 0; i < data.length; i++) {
+                            if ((data[i].email != document.getElementById("email").value) && (data[i].password != document.getElementById("password").value)) {
+                                alert("not authorised to access please contact admin....!")
+                                window.location.href = "adminlogin.html";
+                                break;
+
+
+                            }
+                        }
+
+                        // alert("not authorised to access please contact admin....!")
+                        // window.location.href = "adminlogin.html";
+
+
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Error: ' + textStatus + ' - ' + errorThrown);
+                    }
+                });
+            }
+        </script>
+
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script>
+            feather.replace()
+        </script>
+</body>
+
+</html>

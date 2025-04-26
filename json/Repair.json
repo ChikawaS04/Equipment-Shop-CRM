@@ -1,0 +1,23 @@
+[
+    {
+        "Repair_ID": "12345",
+        "Customer_ID": "1",
+        "Equipment_Name": " John Deere E100 Series",
+        "Description": "Motor is not working",
+        "Request_Date": "2023-11-06"
+    },
+    {
+        "Repair_ID": "12444",
+        "Customer_ID": "2",
+        "Equipment_Name": "Husqvarna HU800AWD Series",
+        "Description": "wheel jam",
+        "Request_Date": "2023-11-07"
+    },
+    {
+        "Repair_ID": "125879",
+        "Customer_ID": "3",
+        "Equipment_Name": "Cub Cadet XT2 Series",
+        "Description": "cutter motor is burned",
+        "Request_Date": "2023-11-08"
+    }
+]

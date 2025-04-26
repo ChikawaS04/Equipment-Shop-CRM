@@ -1,0 +1,26 @@
+[
+    {
+        "Customer_ID": "01",
+        "Contact_number": "447-434-3344",
+        "Invoice_Number": "INV001",
+        "Customer_Name": "John Doe",
+        "Amount": "$1500",
+        "Order_Summary": "Lawn Mower Parts - Engine Upgrade"
+    },
+    {
+        "Customer_ID": "02",
+        "Contact_number": "289-389-8385",
+        "Invoice_Number": "INV002",
+        "Customer_Name": "Jane Smith",
+        "Amount": "$1200",
+        "Order_Summary": "Lawn Mower Blades Replacement"
+    },
+    {
+        "Customer_ID": "03",
+        "Contact_number": "290-786-4444",
+        "Invoice_Number": "INV003",
+        "Customer_Name": "Bob Johnson",
+        "Amount": "$800",
+        "Order_Summary": "Lawn Mower Repair - Electrical System"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "Repair_ID": "LM004",
+        "Technician_ID": "T001",
+        "Technician_Name": "Louis Litt",
+        "Start_Date": "2023-11-20",
+        "Start_Time": "09:00:00",
+        "End_Date": "2023-11-20",
+        "End_Time": "14:00:00",
+        "DescriptionOf_WorkDone": "Installed a new cutting deck and tested for optimal performance.",
+        "Status": "Completed"
+    },
+    {
+        "Repair_ID": "LM005",
+        "Start_Date": "2023-11-22",
+        "Start_Time": "11:00:00",
+        "End_Date": "2023-11-22",
+        "End_Time": "16:30:00",
+        "DescriptionOf_WorkDone": "Replaced worn-out belts and adjusted belt tension.",
+        "Status": "Completed",
+        "Technician_ID": "T002",
+        "Technician_Name": "Mike Ross"
+    },
+    {
+        "Repair_ID": "LM006",
+        "Start_Date": "2023-11-25",
+        "Start_Time": "14:30:00",
+        "End_Date": "2023-11-25",
+        "End_Time": "18:00:00",
+        "DescriptionOf_WorkDone": "Cleaned and sharpened cutting blades, replaced air filter.",
+        "Status": "Completed",
+        "Technician_ID": "T003",
+        "Technician_Name": "Harvey Specter"
+    }
+]
